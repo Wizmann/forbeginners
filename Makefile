@@ -25,6 +25,7 @@ CLOUDFILES_CONTAINER=my_cloudfiles_container
 
 DROPBOX_DIR=~/Dropbox/Public/
 
+GITHUB_REMOTE_NAME=origin
 GITHUB_REPO_SLUG=Wizmann/wizmann.github.com
 GITHUB_PAGES_BRANCH=master
 GITHUB_COMMIT_MSG=$(shell git --no-pager log --format=%s -n 1)  
