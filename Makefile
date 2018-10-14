@@ -123,8 +123,8 @@ cf_upload: publish
 github: publish
 	git config --global user.name "Wizmann @ Travis-ci"
 	git config --global user.email "mail.kuuy@gmail.com"
+	echo "$(GH_CUSTOM_DOMAIN)" > $(OUTPUTDIR)/CNAME
 	ghp-import -n -r $(GITHUB_REMOTE_NAME) -b $(GITHUB_PAGES_BRANCH) -m "$(GITHUB_COMMIT_MSG)" $(OUTPUTDIR)  
 	@git push -fq https://${GH_TOKEN}@github.com/$(GITHUB_REPO_SLUG).git $(GITHUB_PAGES_BRANCH):$(GITHUB_PAGES_BRANCH) > /dev/null  
-
 
 .PHONY: html help clean regenerate serve serve-global devserver stopserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github
