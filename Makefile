@@ -29,6 +29,7 @@ GITHUB_REMOTE_NAME=origin
 GITHUB_REPO_SLUG=Wizmann/wizmann.github.com
 GITHUB_PAGES_BRANCH=master
 GITHUB_COMMIT_MSG=$(shell git --no-pager log --format=%s -n 1)  
+GH_CUSTOM_DOMAIN=wizmann.tk
 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
