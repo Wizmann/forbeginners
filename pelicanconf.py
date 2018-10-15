@@ -29,7 +29,7 @@ LINKS =  (
 
 # Social widget
 SOCIAL = (('github', 'https://github.com/wizmann'),
-          ('rss', 'http://wizmann.tk/feeds/all.rss.xml'),
+          ('rss', 'http://wizmann.tk/feeds/all.atom.xml'),
          )
 
 DEFAULT_PAGINATION = 10
