@@ -13,12 +13,7 @@ TIMEZONE = 'Asia/Shanghai'
 DEFAULT_LANG = u'zhs'
 
 # Feed generation is usually not desired when developing
-FEED_ALL_ATOM = 'feeds/all.rss.xml'
-CATEGORY_FEED_ATOM = 'feeds/%s.rss.xml'
-TRANSLATION_FEED_ATOM = None
-AUTHOR_FEED_ATOM = None
-AUTHOR_FEED_RSS = None
-
+FEED = 'feeds/all.rss.xml'
 
 PYGMENTS_STYLE = "solarizedlight"
 
