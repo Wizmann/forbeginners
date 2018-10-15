@@ -1,6 +1,6 @@
 Date: 2018-10-14
 Title: 容斥原理以及一些题目
-Tags: Algorithm
+Tags: Algorithm, 容斥原理, 计数
 Slug: inclusive-exclusive-principle
 
 ## 什么是容斥原理
