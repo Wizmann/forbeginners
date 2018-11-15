@@ -83,10 +83,10 @@ GeoHash的三个特性，<b>可索引</b>，<b>压缩</b>，<b>便于存储</b>�
 * [GeoHash核心原理解析][5]
 * [python-geohash][7]
 
-[1]: http://wizmann-tk-pic.u.qiniudn.com/blog-geohash-grid.jpg
+[1]: https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/blog-geohash-grid.jpg
 [2]: http://book.douban.com/subject/11554138/
 [3]: http://book.douban.com/subject/3729518/
 [4]: http://en.wikipedia.org/wiki/Geohash
 [5]: http://www.cnblogs.com/LBSer/p/3310455.html
-[6]: http://wizmann-tk-pic.u.qiniudn.com/blog-geohash-latitude-grid.png
+[6]: https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/blog-geohash-latitude-grid.png
 [7]: https://code.google.com/p/python-geohash/

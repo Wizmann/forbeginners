@@ -512,7 +512,7 @@ Linux内核中给出很多经过精心优化的内存屏障，我们在这里可
 
 是的。不过让我们总结一下吧。
 
-![Mutex Tank](http://wizmann-tk-pic.u.qiniudn.com/barrier_tank.png)
+![Mutex Tank](https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/barrier_tank.png)
 
 * 处理器和编译器就是两个想玩死你的孙则，它们会把你的代码到处移动。所以**Be warned and wary!**
 * 多线程的错误是非常subtle和delicate的，所以我们很难设计测试用例，只能无助的等着Bug自己把头伸出来。（我就是想背下来那两个单词！）

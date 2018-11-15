@@ -43,13 +43,13 @@ ZeroMQ是一个程序库，不是一个消息服务器。这样设计的主要�
 
 ZeroMQ的解决方法是由库的调用者显式的维护一个“环境”，如图所示。`libA`和`libB`都有其独有的“环境”信息。
 
-![Alt text](http://wizmann-pic.qiniudn.com/71080471bf8bbf4d4e186c353d6b512c)
+![Alt text](https://github.com/Wizmann/assets/raw/master/wizmann-pic/71080471bf8bbf4d4e186c353d6b512c)
 
 获得的启示：不要在程序库中使用全局状态。如果你这么做了，当库恰好需要在同一个进程中实例化两次时，它很可能会崩溃。
 
 ## 启示3：性能
 
-![Alt text](http://wizmann-pic.qiniudn.com/4ae6721a94012d877709075558562f2b)
+![Alt text](https://github.com/Wizmann/assets/raw/master/wizmann-pic/4ae6721a94012d877709075558562f2b)
 
 ZeroMQ在最初设计时，性能调优就是首要的目标。做为一个消息系统，其性能指标主要有两个：吞吐量和延时。
 
@@ -81,7 +81,7 @@ ZeroMQ在最初设计时，性能调优就是首要的目标。做为一个消�
 
 对于小型数据来说，直接拷贝数据，即“深拷贝”，的开销更小。而对于大型数据来说，所谓“浅拷贝”的开销更小。
 
-![Alt text](http://wizmann-pic.qiniudn.com/48deb1742653d61ba04f6e9591f71902)
+![Alt text](https://github.com/Wizmann/assets/raw/master/wizmann-pic/48deb1742653d61ba04f6e9591f71902)
 
 ZeroMQ使用透明的方式来处理两种不同的场景。并且，对于规模较大的数据，使用引用计数的策略，最大限度的复用与节省内存使用。
 
@@ -93,11 +93,11 @@ ZeroMQ使用透明的方式来处理两种不同的场景。并且，对于规�
 
 如下图所示，对于四条消息，我们需要遍历整个网络栈四次。
 
-![Alt text](http://wizmann-pic.qiniudn.com/b99f65135b0f0e840131c58d2cc57896)
+![Alt text](https://github.com/Wizmann/assets/raw/master/wizmann-pic/b99f65135b0f0e840131c58d2cc57896)
 
 然而，如果我们将这些消息打包成一条消息。我们只需要遍历网络栈一次。
 
-![Alt text](http://wizmann-pic.qiniudn.com/cd2ea1ae7a71443b3ff85ebbc7cb1c3b)
+![Alt text](https://github.com/Wizmann/assets/raw/master/wizmann-pic/cd2ea1ae7a71443b3ff85ebbc7cb1c3b)
 
 在这里，我们的策略与TCP/IP协议中的Nagle算法类似。Nagle算法是为了充分利用带宽，而ZeroMQ的Batching策略是为了均摊网络栈的时间开销。
 
@@ -115,7 +115,7 @@ ZeroMQ使用透明的方式来处理两种不同的场景。并且，对于规�
 
 ## 启示7：整体架构
 
-![Alt text](http://wizmann-pic.qiniudn.com/22f7b30fb17c9a128bbb6dd66ad27a13)
+![Alt text](https://github.com/Wizmann/assets/raw/master/wizmann-pic/22f7b30fb17c9a128bbb6dd66ad27a13)
 
 用户利用“socket”与ZeroMQ进行交互，一个socket可以同多个peer进行交互。
 
@@ -149,7 +149,7 @@ ZeroMQ使用一个无锁队列在用户线程与工作线程间进行消息传�
 
 第二，即使无锁算法比传统的锁算法要快很多，但是其代价仍然是过高的（尤其是在CPU核心之间的通信）。所以，我们仍然依赖于“batching”算法，将昂贵的同步操作均摊到多条消息上。在从队列真正的读写操作之前，加入一次预处理（pre-write / pre-read），将消息打个包，发申通。
 
-![Alt text](http://wizmann-pic.qiniudn.com/9d97e2979db40e413e43cf7d642d1570)
+![Alt text](https://github.com/Wizmann/assets/raw/master/wizmann-pic/9d97e2979db40e413e43cf7d642d1570)
 
 获得的启示：无锁算法是非常精巧的，如果可能的话，尽量使用成熟的设计。如果你需要极致的性能，不要仅仅依赖于无锁算法。尽管无锁算法非常快，你仍然可以通过batching策略优化它。（另外，加钱上船也可以。）
 

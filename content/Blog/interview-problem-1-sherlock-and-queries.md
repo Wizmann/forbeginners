@@ -142,5 +142,5 @@ int main()
 
 
   [1]: https://zh.wikipedia.org/zh-cn/%E5%9F%83%E6%8B%89%E6%89%98%E6%96%AF%E7%89%B9%E5%B0%BC%E7%AD%9B%E6%B3%95
-  [2]: http://wizmann-tk-pic.u.qiniudn.com/book-algorithm-approximate-functions.png
+  [2]: https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/book-algorithm-approximate-functions.png
   [3]: https://www.hackerrank.com/challenges/sherlock-and-queries

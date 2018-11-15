@@ -106,7 +106,7 @@ int main()
 * end get pointer      
 输入哨兵指针，批号向内部数组最后一个再后面一个(one-past-the-last-element)的地址。可以使用`std::streambuf::egptr()`来获取
 
-![](http://wizmann-pic.qiniudn.com/16-9-27/33500590.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/16-9-27/33500590.jpg)
 
 同样，基指针和哨兵指针在流缓冲区的生命周期中也不会改变。
 

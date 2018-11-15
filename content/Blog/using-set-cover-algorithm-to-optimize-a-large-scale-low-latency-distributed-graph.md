@@ -24,7 +24,7 @@ The information about a social relationship can be get from three basic APIs.
 
 ## Main Components for the System
 
-![](http://wizmann-pic.qiniudn.com/15-7-25/59618247.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/15-7-25/59618247.jpg)
 
 * Graph Database (Graph DB)
 * Distributed Network Cache (NCS)
@@ -34,7 +34,7 @@ The information about a social relationship can be get from three basic APIs.
 
 Because the problems of social graph share the same essence. Here we just talk about the "Graph Distance" problem.
 
-![](http://wizmann-pic.qiniudn.com/15-7-25/24130302.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/15-7-25/24130302.jpg)
 
 The _Graph DB_ stores all the relationship of the members. When we ask for the information of _second degree creation_,
 
@@ -50,7 +50,7 @@ As we know, for a distributed system, there are shards, replica and load balance
 
 Consider this scenario.
 
-![](http://wizmann-pic.qiniudn.com/15-7-25/4544395.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/15-7-25/4544395.jpg)
 
 Two queries are both ask for the data from shard 1 and shard 2.
 
@@ -70,13 +70,13 @@ It seems that we find the key to our problem. But this is NP-complete. There is 
 
 However, in practice, a greedy algorithm will actually do the trick. The rule of the greedy algorithm is to find the set which contains largest number uncovered elements.
 
-![](http://wizmann-pic.qiniudn.com/15-7-26/80102455.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/15-7-26/80102455.jpg)
 
 ## Conclusion
 
 We finally find out that the social information and the relationship graph is **not that difficult**. The basic concepts are quite easy. And the main work for the whole system is to use the cache to reduce the amount of calculation on the fly.
 
-![](http://wizmann-pic.qiniudn.com/15-7-26/65691084.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/15-7-26/65691084.jpg)
 
 ## Reference
 

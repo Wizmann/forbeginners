@@ -286,4 +286,4 @@ int main()
     return 0;
 }
 ```
-[1]:http://wizmann-tk-pic.u.qiniudn.com/Magic-Formula.png
+[1]:https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/Magic-Formula.png

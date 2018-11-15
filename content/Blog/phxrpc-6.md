@@ -109,7 +109,7 @@ backlog意为内核为相应套接字排队的最大连接个数。内核为任�
 
 上一张女神的图：
 
-![](http://wizmann-pic.qiniudn.com/16-10-19/89151689.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/16-10-19/89151689.jpg)
 
 没啦~
 

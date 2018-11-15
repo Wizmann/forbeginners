@@ -17,7 +17,7 @@ Slug: azure-storage-made-simple
 
 这个比喻很好的描述了单机系统和分布式系统之间的关系。所以一种可能的分布式系统就是这个样子的：
 
-![](http://wizmann-pic.qiniudn.com/17-9-25/28278606.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/17-9-25/28278606.jpg)
 
 我们将相同功能的服务器组成一个整体，通过一个load balancer对外提供服务。
 
@@ -30,7 +30,7 @@ Slug: azure-storage-made-simple
 
 例如我们有100G的数据，但是数据库的容量最多只支持50G。这样无论怎么样增加副本都不能解决问题。如果我们将100G的数据均分，存储在两个50G的分库上，我们就可以支持单机系统容纳不了的数据了。
 
-![](http://wizmann-pic.qiniudn.com/17-9-22/14141171.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/17-9-22/14141171.jpg)
 
 我们还可以把多个这样的分布式子系统组合起来，就可以组成一个小有规模的分布式系统了。现在我们在使用的一些服务，仍在使用这种模型。
 
@@ -131,7 +131,7 @@ Paxos的描述和证明有一些复杂，这里不做展开。简单来说，就
 
 Apache Kafka使用了类似“预写式日志”的方法来保证一致性。当状态修改请求到来时，先写入一条公共的数据流，这条数据流往往是持久化到磁盘的。然后不同的节点再访问数据流，执行同样的状态修改请求，保证节点状态的一致性。
 
-![](http://wizmann-pic.qiniudn.com/17-9-27/17974300.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/17-9-27/17974300.jpg)
 
 这种设计的缺陷是虽然最终所有节点都会依次执行相同的命令，但是节点执行命令的速度有快有慢，所以在瞬时会有不一致的情况。
 
@@ -148,7 +148,7 @@ Windows Azure Storage（以下简称WAS）采用了多种一致性算法，在�
 
 * Windows Azure Storage的架构
 
-![](http://wizmann-pic.qiniudn.com/17-9-19/98830090.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/17-9-19/98830090.jpg)
 
 WAS从架构上分为三层，分别是前端（FE Layer），分区层（Partition Layer）和数据流层（Stream Layer）。这三层从功能上各有分工，但是又分别解耦，可以部署在不同的机器上。
 
@@ -176,7 +176,7 @@ WAS从架构上分为三层，分别是前端（FE Layer），分区层（Partit
 
 ##### 科普时间：HDD与SSD
 
-![image](http://wizmann-pic.qiniudn.com/17-10-10/63227271.jpg)
+![image](https://github.com/Wizmann/assets/raw/master/wizmann-pic/17-10-10/63227271.jpg)
 
 HDD指的是Hard Disk Drive，又称Spinning Disk，是计算机使用的一种以磁性碟片存储数据的一种非易失性存储设备（人话就是：断电后不丢数据）。数据存储在同心圆磁道上，工作时碟片会旋转（和CD机一样），磁头会移动到相应的磁道上进行数据的读写（CD机用的是光头）。所以，顺序读写时，HDD的性能会比随机读写要好，因为随机读写带来的大量磁盘寻址会让磁头不断移动，从而拖慢性能。
 
@@ -190,7 +190,7 @@ SSD指的是Solid State Disk，即固态硬盘，也是一种常见的非易失�
 
 因为要保证可用性，所以数据流必须要是多机的，而多机系统就要面临一致性问题。WAS提出了一种“链式提交”方法来保证了分布式数据流的一致性。
 
-![](http://wizmann-pic.qiniudn.com/17-10-7/32688212.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/17-10-7/32688212.jpg)
 
 与之前提到的分布式一致性的多机并行的算法不同，WAS在数据流层采用了一种“链式”的提交算法：
 
@@ -210,7 +210,7 @@ SSD指的是Solid State Disk，即固态硬盘，也是一种常见的非易失�
 
 又由于数据流的尾部追加写入特性，所以数据流被分为多个节之后，只有最后一个节是可读写的，其它的所有节都是只读的。
 
-![](http://wizmann-pic.qiniudn.com/17-10-7/46032879.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/17-10-7/46032879.jpg)
 
 我们将把可读可追加的数据流转化为只读的数据流的操作称为“封存”。
 
@@ -218,14 +218,14 @@ SSD指的是Solid State Disk，即固态硬盘，也是一种常见的非易失�
 
 第二个作用，是上面我们提到的，在“链式提交”失败的时候，我们会将所有的数据流副本封存，封存的时候取所有副本的数据的交集。这样就能排除因为写入失败而不一致的数据。
 
-![](http://wizmann-pic.qiniudn.com/17-9-12/93804080.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/17-9-12/93804080.jpg)
 
 > 此时有同学会问，如果我们已经成功的写入了三个副本，但是由于网络原因并没能向请求方返回ACK。请求方会认为这段数据写入失败。但是我们在封存的时候，仍然会将这部分数据封存在数据节中。这种情况怎么处理呢？    
 这个问题后面会有解答，请耐心阅读哦~
 
 ### 数据流层的架构
 
-![](http://wizmann-pic.qiniudn.com/17-10-8/29641653.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/17-10-8/29641653.jpg)
 
 在前面的文章里，没有提到“数据流管理器”（Stream Manager，简称SM）这个角色。这个角色在整个数据流层扮演了一个很重要的角色。
 
@@ -302,7 +302,7 @@ EN节点中采用了预写入日志。每一次写入操作，EN会并发的
 
 ### 分区层的架构
 
-![](http://wizmann-pic.qiniudn.com/17-10-10/51400577.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/17-10-10/51400577.jpg)
 
 图中的PS指的就是上文提到的分区服务，每个PS维护着对象表的一个分区，其持久化信息都储存在数据流层上。
 
@@ -318,7 +318,7 @@ Partion Map Table用来存储与检索分区所对应的节点。
 
 ## 战胜CAP理论？你他娘的真是个天才！
 
-![](http://wizmann-pic.qiniudn.com/17-9-20/10049124.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/17-9-20/10049124.jpg)
 
 WAS宣称自己战胜了CAP理论，提供了高可用性和强一致性。WAS能做到这点主要是因为数据流层设计的好。
 
@@ -338,7 +338,7 @@ WAS宣称自己战胜了CAP理论，提供了高可用性和强一致性。WAS�
 
 上一张图。
 
-![](http://wizmann-pic.qiniudn.com/17-10-10/71011744.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/17-10-10/71011744.jpg)
 
 > 听说用这种奇怪键盘的人都注孤了。
 

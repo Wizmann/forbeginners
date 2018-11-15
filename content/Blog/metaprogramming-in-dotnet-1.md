@@ -5,7 +5,7 @@ Slug: metaprogramming-in-dotnet-1
 
 ## 什么是 Metaprogramming (元编程)
 
-![](http://wizmann-pic.qiniudn.com/17-2-15/1418894-file_1487139497158_1868c.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/17-2-15/1418894-file_1487139497158_1868c.jpg)
 
 元编程从字面上理解就是“能处理程序的程序”。
 

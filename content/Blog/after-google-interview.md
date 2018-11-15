@@ -13,5 +13,5 @@ Slug: after-google-interview
 
 \#屌丝心态#。。。
 
-[1]: http://wizmann-tk-pic.u.qiniudn.com/about-google-interview-tiny.png
-[2]: http://wizmann-tk-pic.u.qiniudn.com/about-google-interview.png
+[1]: https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/about-google-interview-tiny.png
+[2]: https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/about-google-interview.png

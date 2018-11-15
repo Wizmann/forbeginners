@@ -156,7 +156,7 @@ int main() {
 
 已知它们的运算规律。
 
-![Alt text](http://wizmann-pic.qiniudn.com/ba89abba98064a7e42e52e9e5b2de57f)
+![Alt text](https://github.com/Wizmann/assets/raw/master/wizmann-pic/ba89abba98064a7e42e52e9e5b2de57f)
 
 现在，有一个包含"i, j, k"的连乘式。它是由一段连乘式重复X遍得出的。
 
@@ -198,7 +198,7 @@ i与j的转化是类似的。
 
 对于i和j，我们可以这样考虑。循环节之积只有以下几种可能：`±1, ±i, ±j, ±k`。
 
-![the table](http://wizmann-pic.qiniudn.com/252e0e81143f2dd5cb6e01e1e69d0709)
+![the table](https://github.com/Wizmann/assets/raw/master/wizmann-pic/252e0e81143f2dd5cb6e01e1e69d0709)
 
 我们可以看出，对于`1, i, j, k`，乘法都是有一个循环节的。这里不需要定量分析，我们可以直接断定，如果在一定的循环节中，不能把算式转化为`i * j`的形式，那么就不可能转化。
 
@@ -329,7 +329,7 @@ int main() {
 
 `19`是一个magic number。还有，小心<del>Dandelo</del>数据超int。
 
-![Alt text](http://wizmann-pic.qiniudn.com/625c5bb804b76545978bcb11310099a6)
+![Alt text](https://github.com/Wizmann/assets/raw/master/wizmann-pic/625c5bb804b76545978bcb11310099a6)
 
 ## D. Ominous Omino
 

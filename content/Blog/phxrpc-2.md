@@ -76,7 +76,7 @@ void Timer :: MsSleep(const int time_ms) {
 
 因为他们没写测试啊！
 
-![](http://wizmann-pic.qiniudn.com/16-9-29/12309965.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/16-9-29/12309965.jpg)
 
 ## 补充
 
@@ -88,6 +88,6 @@ void Timer :: MsSleep(const int time_ms) {
 
 这。。。
 
-![](http://wizmann-pic.qiniudn.com/16-9-29/43591449.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/16-9-29/43591449.jpg)
 
 [1]: http://stackoverflow.com/questions/13263277/difference-between-stdsystem-clock-and-stdsteady-clock

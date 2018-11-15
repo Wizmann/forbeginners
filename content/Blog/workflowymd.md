@@ -19,13 +19,13 @@ Here follows the detail and usage of WorkflowyMd.
 
 You have to add `[md]` tag at the end of the bullet to let the plugin render your markdown note. If you delete the tag, your note will return to the plain text note.
 
-![](http://wizmann-pic.qiniudn.com/17-1-26/48097654-file_1485411968675_15abe.gif)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/17-1-26/48097654-file_1485411968675_15abe.gif)
 
 ## Edit mode
 
 If you want to edit your markdown note. There is no need to type and delete the `[md]` tag every time. Just double click on the note, the notes will toggle between the markdown style (read-only) and plain text style (editable).
 
-![](http://wizmann-pic.qiniudn.com/17-1-26/59010877-file_1485412203554_8eea.gif)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/17-1-26/59010877-file_1485412203554_8eea.gif)
 
 ## Better image support
 
@@ -33,13 +33,13 @@ There always one annoy stuff about the image - the size. Sometimes the image siz
 
 Workflowy solve the problem. The image will be displayed in the style `max-width: 20%` by default. And on a double click, the image will scale to `max-width: 100%` for us to show the details.
 
-![](http://wizmann-pic.qiniudn.com/17-1-26/95527913-file_1485412578590_104ab.gif)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/17-1-26/95527913-file_1485412578590_104ab.gif)
 
 ## Syntax Highlight
 
 This is the killer feature for this plugin. Syntax highlight! No more explain, let me show you!
 
-![](http://wizmann-pic.qiniudn.com/17-1-26/104624-file_1485412763869_931a.gif)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/17-1-26/104624-file_1485412763869_931a.gif)
 
 ## Get the code
 

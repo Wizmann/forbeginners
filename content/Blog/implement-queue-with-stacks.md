@@ -239,4 +239,4 @@ if __name__ == '__main__':
 [1]: http://book.douban.com/subject/19952400/
 [2]: http://stackoverflow.com/questions/5538192/how-to-implement-a-queue-with-three-stacks
 [3]: http://stackoverflow.com/a/5568094/2927439
-[4]: http://wizmann-tk-pic.u.qiniudn.com/blog-queue-with-stack-summary.jpg
+[4]: https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/blog-queue-with-stack-summary.jpg

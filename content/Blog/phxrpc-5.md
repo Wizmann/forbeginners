@@ -10,7 +10,7 @@ Slug: phxrpc-5
 
 `Run()`函数（其实我觉得叫Register或Activate会更好）首先声明了两个单向的pipe：`pipe_fds_`，从[文档][1]中我们可以知道`pipe_fds_[0]`是读管道，而`pipe_fds_[1]`是写管道。这里有一丁点反直觉，就是pipe拿了两个fd，但是仍旧是单工的。
 
-![](http://wizmann-pic.qiniudn.com/16-10-16/2335602.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/16-10-16/2335602.jpg)
 
 然后将读fd设为`O_NONBLOCK`以供epoll调度，最后将`Func()`函数传入`scheduler_`中。
 
@@ -31,7 +31,7 @@ Slug: phxrpc-5
 
 在其它的代码中，也没有调用个函数的地方，我觉得这个函数是开发者忘记删了。
 
-![](http://wizmann-pic.qiniudn.com/16-10-16/85921046.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/16-10-16/85921046.jpg)
 
 ### 远古智慧 — CreateSocket
 
@@ -53,11 +53,11 @@ Slug: phxrpc-5
 
 所以，由此可见，这个循环即是事件驱动的，又是轮询的。然而这两种模型，居然能写在一个函数里，真是令人印象深刻。
 
-![](http://wizmann-pic.qiniudn.com/16-10-16/4157866.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/16-10-16/4157866.jpg)
 
 下面的`DealwithTimeout`函数处理了一下超时的协程，并且更新了`next_timeout`变量。然而这个变量因为众所周知的原因，并没有什么卵用。
 
-![](http://wizmann-pic.qiniudn.com/16-10-16/4157866.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/16-10-16/4157866.jpg)
 
 ## Poll来Poll去 — 一堆epoll函数的封装
 
@@ -93,7 +93,7 @@ epoll有两种触发模式，边缘触发(edge-trigger, ET)和水平触发(level
 
 这个函数比较绕，不过有一个好消息 —— 这个函数也没有被其它地方调用过。不过这种`cascaded epoll`的技巧确实是让人耳目一新。
 
-![](http://wizmann-pic.qiniudn.com/16-10-16/4157866.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/16-10-16/4157866.jpg)
 
 ### 延时执行 - UThreadWait
 

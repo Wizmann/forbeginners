@@ -22,7 +22,7 @@ Slug: cf-3c-tic-tac-toe
 ## the STATE pattern
 我们可以看出，这个对战系统其实可以用一个状态机来表示。
 
-![http://wizmann-tk-pic.u.qiniudn.com/blog-tick-tac-toe.png][2]
+![https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/blog-tick-tac-toe.png][2]
 
 于是我们的对战系统也可以写成一个状态机的模式。
 
@@ -450,7 +450,7 @@ const int SECOND_WIN = 200;
 [云诺网盘 - 戳我][5]
 
 [1]: http://codeforces.com/problemset/problem/3/C
-[2]: http://wizmann-tk-pic.u.qiniudn.com/blog-tick-tac-toe.png
+[2]: https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/blog-tick-tac-toe.png
 [3]: http://book.douban.com/subject/21964984/
 [4]: http://book.douban.com/subject/2243615/
 [5]: https://s.yunio.com/voeWtA

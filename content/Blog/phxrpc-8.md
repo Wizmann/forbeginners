@@ -84,7 +84,7 @@ int nfds = epoll_wait(epoll_fd_, events, max_task_, 4);
 
 好啦好啦，就到这里吧。
 
-![](http://wizmann-pic.qiniudn.com/16-10-23/91802175.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/16-10-23/91802175.jpg)
 
 
 

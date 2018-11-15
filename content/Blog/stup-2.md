@@ -7,7 +7,7 @@ Slug: stup-2
 
 ### Brief Introduction of TCP & UDP Packet Structure
 
-![](http://wizmann-pic.qiniudn.com/17-4-24/73808256-file_1493006773118_a335.png)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/17-4-24/73808256-file_1493006773118_a335.png)
 
 STUP pretend itself as a protocol at the Transmission Layer, but actually it's absolutely an Application Layer protocol. So before we start, I'd like to recall some knowledge of two important Transmission Layer protocol: TCP & UDP.
 
@@ -34,7 +34,7 @@ As I mentioned before, the only problem for me in TCP is the flow control. But t
 
 So, I build STUP over UDP to make everything simple. Firstly, UDP is a commonly used and well-known protocol, we can take advantages of existing infrastructure, framwork and libs. Secondly, UDP is lightweighted protocol, the overhead to build a new protocol over it is almost nothing. 
 
-![](http://wizmann-pic.qiniudn.com/17-5-2/38201062-file_1493708415970_dc40.png)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/17-5-2/38201062-file_1493708415970_dc40.png)
 
 The chart above shows STUP packet structure. And the bits in green are plain-text and the others in red are encrypted.
 
@@ -61,7 +61,7 @@ The first step is encryption, of course. It can help us the hide the feature ins
 
 But why AES-ECB? There are a lot of saying on the internet that AES-ECB sucks, because it leaks plaintext data patterns. 
 
-![](http://wizmann-pic.qiniudn.com/17-5-2/19737252-file_1493708926479_15add.png)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/17-5-2/19737252-file_1493708926479_15add.png)
 
 It is because we ecrypt the STUP packet **as a whole**, it means there is no way to get the sequence number to order the packets before we decrypt it. As a solution, we add a "random IV" as a plain text in the STUP header. So the key to ecrypt is a combination of 48 bits pre-defined key and 16 bits random key. It might lead to a risk of small key space, but actually it's more than enough to keep out traffic safe as we are not VIP who worth a brute force hacking.
 
@@ -69,7 +69,7 @@ And still, there is another problem that we can't hide the length information of
 
 ## STUP State Machine
 
-![](http://wizmann-pic.qiniudn.com/17-4-24/70104484-file_1493025532333_338c.png)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/17-4-24/70104484-file_1493025532333_338c.png)
 
 STUP state machine is also a simplify TCP state machine. And, in essence, they behave exactly the same. 
 

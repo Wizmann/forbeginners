@@ -37,7 +37,7 @@ The data outside the fence is called the *suspected outliers* and *outliners*.
 
 If the data happens to be normally distributed, ``IQR = 1.35σ``. It means that only 0.52% of the set of data should be out of the *inner fence* and  hardly any of the data should be out of the *outer fence*. As a result, if a data is considered as a *outliners*, it is largely an exception.
 
-![Boxplot and Normal Distribution](http://wizmann-tk-pic.u.qiniudn.com/Boxplot.png)
+![Boxplot and Normal Distribution](https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/Boxplot.png)
 
 ## Reference
 

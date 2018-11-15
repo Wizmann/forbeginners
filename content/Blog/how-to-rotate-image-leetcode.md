@@ -70,7 +70,7 @@ Slug: how-to-rotate-image-leetcode
 欢迎大家提出自己的看法。代码请贴到[gist][3]或[hpaste][4]等网站上，不要把代码直接写到评论中，我会及时update本文，展示大家的想法。
 
 [1]: http://oj.leetcode.com/problems/rotate-image/
-[2]: http://wizmann-tk-pic.u.qiniudn.com/blog-rotate-image-leetcode.png
+[2]: https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/blog-rotate-image-leetcode.png
 [3]: https://gist.github.com/
 [4]: http://lpaste.net/
 

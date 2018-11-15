@@ -38,7 +38,7 @@ Twisted使用Defer来管理callback链，如果你写过js，就可能对被回�
 
 Seriously，defer允许我们使用一般的顺序型编程模型来编写回调代码。我们只需要把函数按照顺序注册到defer当中，就可以完整的实现一个回调链了。
 
-![](http://wizmann-pic.qiniudn.com/public/16-12-9/90670835.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/public/16-12-9/90670835.jpg)
 
 本文不会对defer进行过多讲解，如果想要了解更多的话，可以参考twisted的[官方文档][2]。
 
@@ -129,7 +129,7 @@ return succeed(self.pending.pop(0))
 
 您这就是在逗我。
 
-![](http://wizmann-pic.qiniudn.com/public/16-12-9/36902015.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/public/16-12-9/36902015.jpg)
 
 再贴个性能对比，使用`list.pop(0)`弹出10^5个数据需要2.23s，而使用`deque.popleft()`只需要0.12s。
 

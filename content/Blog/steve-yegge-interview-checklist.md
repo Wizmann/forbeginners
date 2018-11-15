@@ -108,7 +108,7 @@ Udi Manber 的[《算法引论》][2]。
 
 剩下的基本就是看脸了。。。
 
-![puzzles](http://wizmann-pic.qiniudn.com/fa4b0cfd335bae28abf23d34fc6e84ee)
+![puzzles](https://github.com/Wizmann/assets/raw/master/wizmann-pic/fa4b0cfd335bae28abf23d34fc6e84ee)
 
 ## 总结
 

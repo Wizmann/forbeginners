@@ -139,10 +139,10 @@ def pocket_pla(datas, limit):
 参考了[课程论坛][8]的讨论。并且感谢Li Tianyi同学指出我的问题。
 
 
-  [1]: http://wizmann-tk-pic.u.qiniudn.com/blog-perceptron-Ncell.png
-  [2]: http://wizmann-tk-pic.u.qiniudn.com/blog-perceptron-formula-1.jpg
-  [3]: http://wizmann-tk-pic.u.qiniudn.com/blog-perceptron-formula-2.png
-  [4]: http://wizmann-tk-pic.u.qiniudn.com/blog-perceptron-update.png
+  [1]: https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/blog-perceptron-Ncell.png
+  [2]: https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/blog-perceptron-formula-1.jpg
+  [3]: https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/blog-perceptron-formula-2.png
+  [4]: https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/blog-perceptron-update.png
   [5]: http://shaoxiongjiang.com/2013/03/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8-%E6%84%9F%E7%9F%A5%E5%99%A8-perceptron/
   [6]: http://zh.wikipedia.org/wiki/%E6%84%9F%E7%9F%A5%E5%99%A8
   [7]: https://class.coursera.org/ntumlone-001/class

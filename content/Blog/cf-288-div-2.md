@@ -9,7 +9,7 @@ Brute force.
 
 There are multiple ways to form a 2*2 square at one single step.
 
-![Alt text](http://wizmann-pic.qiniudn.com/6fb53c51539b47559cf0d122a832cf63)
+![Alt text](https://github.com/Wizmann/assets/raw/master/wizmann-pic/6fb53c51539b47559cf0d122a832cf63)
 
 So at every step, we have to check the neighbours of pixel that is colored black.
 
@@ -134,7 +134,7 @@ The background of this problem is quite twisted.
 
 First of all, we have to find out in which scenario there is no way to defence against the ghost.
 
-![Alt text](http://wizmann-pic.qiniudn.com/833368d068c6dc956b62d9babf01c3b6)
+![Alt text](https://github.com/Wizmann/assets/raw/master/wizmann-pic/833368d068c6dc956b62d9babf01c3b6)
 
 It's easy to find out in that diagram above that if the duration of the candle is less than the number of candles which is needed.
 
@@ -181,13 +181,13 @@ It's not hard to find out that the problem is not about the "string" but the "gr
 At the every beginning, we regard the substrings as vertexes, every two substrings which could be connected has an edge between them.
 
 
-![Alt text](http://wizmann-pic.qiniudn.com/bbc690924ece17dde46fd5d23188bf5d)
+![Alt text](https://github.com/Wizmann/assets/raw/master/wizmann-pic/bbc690924ece17dde46fd5d23188bf5d)
 
 In this scenario, all we have to do is find a path that visit all the vertexes. This path is called **Hamilton path**. The algorithm to find a hamilton path in a graph is quite slow with O(2 ** N) time complexity. We have to find another way.
 
 Similar to hamilton path, the eular path is a path that visit all the edges of the graph. And this inspires us to make the strings to another graph, and the eular path will be the final answer with the complete password.
 
-![Alt text](http://wizmann-pic.qiniudn.com/bd69ddd562d6b4b4cde4e3a461a8706e)
+![Alt text](https://github.com/Wizmann/assets/raw/master/wizmann-pic/bd69ddd562d6b4b4cde4e3a461a8706e)
 
 ```cpp
 #include <cstdio>

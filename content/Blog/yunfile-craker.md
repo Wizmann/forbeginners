@@ -51,6 +51,6 @@ Slug: yunfile-cracker
 
 [1]: http://www.luacloud.com/2012/crack-yunfile-network-disk-30-wait-for-restrictions.html
 
-[2]: http://wizmann-tk-pic.u.qiniudn.com/yunfile-craker-1.png
+[2]: https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/yunfile-craker-1.png
 
 [3]: https://github.com/Wizmann/Utils/tree/master/Chrome-extension/yunfile-cracker

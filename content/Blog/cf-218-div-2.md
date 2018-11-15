@@ -370,5 +370,5 @@ int main()
 }
 ```
 
-[1]: http://wizmann-tk-pic.u.qiniudn.com/blog-cf-218-div-2-d-vessels.png
-[2]: http://wizmann-tk-pic.u.qiniudn.com/blog-cf-218-div-2-e.png
+[1]: https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/blog-cf-218-div-2-d-vessels.png
+[2]: https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/blog-cf-218-div-2-e.png

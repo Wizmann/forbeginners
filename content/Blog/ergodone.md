@@ -19,15 +19,15 @@ Slug: ergodone
 ErgoDone是著名开源硬件ErgoDox的中国特色版本，精简了一些硬件以控制成本。总体价格在500RMB左右，是工薪阶级装逼界的一颗新星。
 
 Ergodox的一个版本：
-![](http://wizmann-pic.qiniudn.com/16-10-2/41980975.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/16-10-2/41980975.jpg)
 
 ErgoDone明显就屌丝了许多：
 
-![](http://wizmann-pic.qiniudn.com/16-10-5/28663395.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/16-10-5/28663395.jpg)
 
 ## 键盘主控
 
-![](http://wizmann-pic.qiniudn.com/16-10-2/32662639.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/16-10-2/32662639.jpg)
 
 ErgoDone使用了Arduino pro micro做为主控，基中使用了mega32u4做为芯片，提供了模拟USB输入设备的相关函数（包括键盘、鼠标）。网上有许多现成的范例，用这款芯片（以及另一版使用mega32u4的Arduino开发版，Arduino Leonardo）制作体感鼠标（搭配陀螺仪）、游戏摇杆（搭配相关硬件）以及各种专用输入设备。
 
@@ -41,7 +41,7 @@ Arduino pro micro淘宝价不到20块钱，相对来说算是非常超值了。
 
 在ErgoDone的设计中，整块键盘的供电，都是通过MiniUSB线来完成的。然而，pro micro的接口是MicroUSB的，这里我们需要一个转换工作。
 
-![](http://wizmann-pic.qiniudn.com/16-10-2/388124.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/16-10-2/388124.jpg)
 
 MiniUSB，俗称T口USB。其中有五颗线，代表供电，D+，D-，ID与接地。
 
@@ -86,7 +86,7 @@ TDD，又称测试驱动开发。就是在焊完一部分之后，立刻进行�
 
 一个半成品：
 
-![](http://wizmann-pic.qiniudn.com/16-10-2/35993621.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/16-10-2/35993621.jpg)
 
 ## 对键盘编程
 
@@ -96,25 +96,25 @@ TDD，又称测试驱动开发。就是在焊完一部分之后，立刻进行�
 
 默认层：http://www.keyboard-layout-editor.com/#/gists/a9278a768f78adf9d7b019b883678390
 
-![](http://wizmann-pic.qiniudn.com/16-10-5/11486899.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/16-10-5/11486899.jpg)
 
 Fn层：http://www.keyboard-layout-editor.com/#/gists/79ad8e6c4ac70cfad1ed400355e960a7
 
 右手的那堆Fn对应着0~9上面的符号
 
-![](http://wizmann-pic.qiniudn.com/16-10-5/90976851.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/16-10-5/90976851.jpg)
 
 Vim层：http://www.keyboard-layout-editor.com/#/gists/950dc52b3b27c24601661f2fd43a6d69
 
 模仿vim/bash映射了一些快捷键
 
-![](http://wizmann-pic.qiniudn.com/16-10-5/92544582.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/16-10-5/92544582.jpg)
 
 魔改层：http://www.keyboard-layout-editor.com/#/gists/8bb13d2439c542a06d99e17fca3a234b
 
 用来魔改/创造一些不存在的键位和组合
 
-![](http://wizmann-pic.qiniudn.com/16-10-5/28220231.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/16-10-5/28220231.jpg)
 
 食指多出来的四个键分别对应着四种括号`<>(){}[]`。在编程中会比较常用到。
 

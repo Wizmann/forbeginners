@@ -11,7 +11,7 @@ The title is quite "Yin-ish" as it seems, but I'm not a "Yin-ist". You know what
 
 I did a quite a good job in Leetcode Weekly Contest, at least in my point of view. I won a 4th place and a 6th place in my 19 contests, and my highest global ranking is 49th.
 
-![](http://wizmann-pic.qiniudn.com/17-6-7/15859142.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/17-6-7/15859142.jpg)
 
 It's remarkable! According to all my poor results among all the online/offline programming contests, there is no reason for me to give up Leetcode contest which seems perfectly suitable for my capabilities.
 

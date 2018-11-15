@@ -114,5 +114,5 @@ chrome.webRequest.onBeforeRequest.addListener(
 Github: [戳我][3]
 
 [1]: http://www.qiniu.com/
-[2]: http://wizmann-tk-pic.u.qiniudn.com/blog-codeforces-cdn-qiniu-settings.png
+[2]: https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/blog-codeforces-cdn-qiniu-settings.png
 [3]: https://github.com/Wizmann/codeforces-cdn

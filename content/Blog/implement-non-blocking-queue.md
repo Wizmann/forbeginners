@@ -45,7 +45,7 @@ def cmpxchg(val, oldval, newval):
 
 ### 数据结构
 
-![](http://wizmann-pic.qiniudn.com/18-5-1/40471673.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/18-5-1/40471673.jpg)
 
 我们使用单链表做为基础数据结构，链表的头代表着队列的头，链表的尾对应着队列的尾。这样添加数据时，我们在TAIL节点处写入，弹出数据时从HEAD节点处弹出。
 

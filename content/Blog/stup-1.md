@@ -25,7 +25,7 @@ It's understandble that TCP has to negotiate the sliding window size with zero k
 
 ## How it works?
 
-![](http://wizmann-pic.qiniudn.com/17-4-20/98249887-file_1492687602713_f658.png)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/17-4-20/98249887-file_1492687602713_f658.png)
 
 Our local application behavess like a socks5 proxy client, and send its data to a local adapter which will translate socks5 packet into STUP packet. The adapter doesn't need to understand the "meaning" of socks5 packets, it just take it as a byte-flow, then encapsulate the data into the STUP packet.
 
@@ -43,4 +43,4 @@ We implemented our simplfied "TCP stack" with fixed-size sliding window, nagle a
 
 I say thankya.
 
-![](http://wizmann-pic.qiniudn.com/17-4-20/89638264-file_1492701304939_10484.png)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/17-4-20/89638264-file_1492701304939_10484.png)

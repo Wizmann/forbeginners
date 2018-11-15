@@ -111,7 +111,7 @@ namespace ConsoleApplication6
 
 运行结果如下：
 
-![](http://wizmann-pic.qiniudn.com/17-1-19/26234044-file_1484828912411_150f3.gif)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/17-1-19/26234044-file_1484828912411_150f3.gif)
 
 我们可以看到：
 1. 我们将`MyCall()`“包装”在一个`delegate`中，然后调用`BeginInvoke`函数实现异步执行。这个delegate的执行不会阻塞main thread。
@@ -189,7 +189,7 @@ namespace ConsoleApplication2
 
 运行结果如下：
 
-![](http://wizmann-pic.qiniudn.com/17-1-20/46892581-file_1484911655343_68ae.gif)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/17-1-20/46892581-file_1484911655343_68ae.gif)
 
 我们可以看出，所有的函数都执行在同一个线程上。并且`Handle1`和`Handle2`顺序执行。
 

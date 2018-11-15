@@ -126,8 +126,8 @@ Matrix67: [二分图最大匹配的König定理及其证明][4]
 
 wikipedia: [匈牙利算法][5]
 
-[1]: http://wizmann-tk-pic.u.qiniudn.com/blog-hungary-1.png
-[2]: http://wizmann-tk-pic.u.qiniudn.com/blog-hungary-2.png
+[1]: https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/blog-hungary-1.png
+[2]: https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/blog-hungary-2.png
 [3]: https://www.byvoid.com/blog/hungary
 [4]: http://www.matrix67.com/blog/archives/116
 [5]: http://zh.wikipedia.org/wiki/%E5%8C%88%E7%89%99%E5%88%A9%E7%AE%97%E6%B3%95

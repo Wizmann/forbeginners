@@ -48,4 +48,4 @@ Slug: read-head-first-design-pattern
 [1]: http://book.douban.com/subject/1052241/
 [2]: http://img5.douban.com/lpic/s2686916.jpg
 [3]: http://book.douban.com/subject/2243615/
-[4]: http://wizmann-tk-pic.u.qiniudn.com/blog-design-pattern-mindmap.png
+[4]: https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/blog-design-pattern-mindmap.png

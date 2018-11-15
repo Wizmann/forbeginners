@@ -257,11 +257,11 @@ The cost for the companies to maintain the base station is defined as the minima
 
 All we have to do is to find the minimal distance with that formula.
 
-![Alt text](http://wizmann-pic.qiniudn.com/611be1334aab00954c56e31af0bc0cc4)
+![Alt text](https://github.com/Wizmann/assets/raw/master/wizmann-pic/611be1334aab00954c56e31af0bc0cc4)
 
 It's easy to see that we can deal with the x-axis and y-axis separately
 
-![Alt text](http://wizmann-pic.qiniudn.com/2bffa65945d689235e602935d782256b).
+![Alt text](https://github.com/Wizmann/assets/raw/master/wizmann-pic/2bffa65945d689235e602935d782256b).
 
 We can learn something from the quadratic equation like formula. And of course, we minimum value is near `sum(xa[i]) / A`. This is same with the y-axis. As a result, we can check the grid near `<sum(xa[i]) / A, sum(ya[i]) / A>`, to see if there is a minimum cost for the communication.
 

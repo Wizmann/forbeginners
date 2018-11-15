@@ -5,11 +5,11 @@ Slug: moujiecao
 
 ## 啥？
 
-![节操精选](http://wizmann-tk-pic.u.qiniudn.com/blog-jiecao-icon.png)
+![节操精选](https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/blog-jiecao-icon.png)
 
 [节操精选](http://jiecao.fm/)是一个**没有下限**的文字图片聚合类移动应用，现在支持Android/iOS移动平台。
 
-![界面](http://wizmann-tk-pic.u.qiniudn.com/blog-jiecao-ui.png)
+![界面](https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/blog-jiecao-ui.png)
 
 本人是一个非常懒的人，有电脑就不想碰手机。。。于是萌生了一个在PC端使用这个应用的想法。。。
 
@@ -91,7 +91,7 @@ message Person {
 
 所以就不公开了～上一个高清有码大图～
 
-![protobuf](http://wizmann-tk-pic.u.qiniudn.com/blog-jiecao-protobuf.png)
+![protobuf](https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/blog-jiecao-protobuf.png)
 
 
 ## 关于开发
@@ -102,7 +102,7 @@ message Person {
 
 还有一个原因是手机的dpi比电脑屏幕的要高一些（用retina屏幕的土豪们退散），所以同样大小的“窗口”，电脑的显示会粗糙很多。
 
-![节操App](http://wizmann-tk-pic.u.qiniudn.com/blog-jiecao-app-ui.png)
+![节操App](https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/blog-jiecao-app-ui.png)
 
 ### 应用载体
 
@@ -112,7 +112,7 @@ Chrome为App插件提供了相对宽松的安全策略，我们可以跨域POST�
 
 更重要的是，我们可以把一个ChromeApp基本视为一个本地应用，放到桌面上或者启动栏上。
 
-![启动器](http://wizmann-tk-pic.u.qiniudn.com/blog-jiecao-chrome-app-launcher.png)
+![启动器](https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/blog-jiecao-chrome-app-launcher.png)
 
 我用的是Xubuntu，在其它系统上，如Win、MacOS以及其它不同的Linux发行版，也可以达到类似的效果。
 
@@ -141,7 +141,7 @@ Chrome为App插件提供了相对宽松的安全策略，我们可以跨域POST�
 
 #### AngularJS
 
-![AngularJS](http://wizmann-tk-pic.u.qiniudn.com/AngularJS-large.png)
+![AngularJS](https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/AngularJS-large.png)
 
 > AngularJS是一款开源 JavaScript函式库，由Google维护，用来协助单一页面应用程式运行的。它的目标是透过MVC模式 (MVC) 功能增强基于浏览器的应用，使开发和测试变得更加容易。
 

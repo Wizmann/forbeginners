@@ -28,7 +28,7 @@ if (BaseTcpUtils::SetNonBlock(sockfd, false)
 
 在`BlockTcpStream`把fd传递给`BlockTcpStreambuf`之前，需要把fd设置为`block`的。而这段代码最大的槽点就是这个`SetNonBlock`函数，和下面的`set nonblock fail`日志（想一想）。完全让人摸不到头脑，达到一脸懵逼的最高境界。
 
-![](http://wizmann-pic.qiniudn.com/16-10-3/87163832.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/16-10-3/87163832.jpg)
 
 由于`recv`和`send`函数是`block`的，所以在读取、写入缓冲区时，如果没有足够的数据可读或没有足够的空间可写，则读取写入操作会阻塞住。
 
@@ -38,7 +38,7 @@ if (BaseTcpUtils::SetNonBlock(sockfd, false)
 
 ### TCP的工作流程
 
-![](http://wizmann-pic.qiniudn.com/16-10-3/92621506.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/16-10-3/92621506.jpg)
 
 > 图片来源：UNIX网络编程卷一：套接字编程 4.2节
 
@@ -56,7 +56,7 @@ if (BaseTcpUtils::SetNonBlock(sockfd, false)
 
 那么我们要问了，为什么在这里我们需要等待2MSL时间呢。
 
-![](http://wizmann-pic.qiniudn.com/16-10-3/33186679.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/16-10-3/33186679.jpg)
 
 > 图片来源：Effective TCP/IP 3.8节
 
@@ -70,7 +70,7 @@ TCP拆除连接使用了四次握手的机制，而主动关闭连接的一方�
 
 ### IO复用：Poll
 
-![](http://wizmann-pic.qiniudn.com/16-10-3/84501111.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/16-10-3/84501111.jpg)
 
 > 图片来源：UNIX网络编程卷一：套接字编程 6.2节
 
@@ -118,4 +118,4 @@ if (0 == ret)
 忍不了的话。。。那就留言交流吧~
 
 
-![](http://wizmann-pic.qiniudn.com/16-10-3/42112021.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/16-10-3/42112021.jpg)

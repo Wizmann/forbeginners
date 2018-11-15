@@ -31,7 +31,7 @@ Slug: phxrpc-7
 
 GG。
 
-![](http://wizmann-pic.qiniudn.com/16-10-22/54117736.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/16-10-22/54117736.jpg)
 
 ## 一个超级文件 - HshaServer
 

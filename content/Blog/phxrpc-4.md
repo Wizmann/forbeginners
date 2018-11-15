@@ -88,12 +88,12 @@ slot是可以复用的，`first_done_item_`记录着已执行完的context的下
 
 最后上几张皂片：
 
-![](http://wizmann-pic.qiniudn.com/16-10-13/31415098.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/16-10-13/31415098.jpg)
 
-![](http://wizmann-pic.qiniudn.com/16-10-13/1208386.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/16-10-13/1208386.jpg)
 
-![](http://wizmann-pic.qiniudn.com/16-10-13/97556242.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/16-10-13/97556242.jpg)
 
-![](http://wizmann-pic.qiniudn.com/16-10-13/44196833.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/16-10-13/44196833.jpg)
 
-![](http://wizmann-pic.qiniudn.com/16-10-13/20763058.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/16-10-13/20763058.jpg)

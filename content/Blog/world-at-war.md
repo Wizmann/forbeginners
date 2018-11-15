@@ -75,5 +75,5 @@ public:
 ```
 
   [1]: http://book.douban.com/subject/19952400/
-  [2]: http://wizmann-tk-pic.u.qiniudn.com/blog-world-at-war.png
-  [3]: http://wizmann-tk-pic.u.qiniudn.com/blog-spanning-tree.png
+  [2]: https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/blog-world-at-war.png
+  [3]: https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/blog-spanning-tree.png

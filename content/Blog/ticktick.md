@@ -9,7 +9,7 @@ Go back to work！
 
 <!-- PELICAN_END_SUMMARY -->
 
-<audio src="http://wizmann-tk-pic.u.qiniudn.com/ticking.mp3" autoplay="autoplay" loop="loop"/>
+<audio src="https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/ticking.mp3" autoplay="autoplay" loop="loop"/>
 
 根据科学研究表明，在很大程度上，在工作时配上单调有节奏的背景音，可以大幅度提高效率。
 
@@ -19,6 +19,6 @@ Go back to work！
 
 背景中的tick-tick的音效就是从插件中搞出来的。
 
-[1]: http://wizmann-tk-pic.u.qiniudn.com/blog-ticktick-big-brother.jpg
+[1]: https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/blog-ticktick-big-brother.jpg
 [2]: http://www.douban.com/group/pomotodo/
 

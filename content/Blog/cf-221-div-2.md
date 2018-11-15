@@ -399,5 +399,5 @@ int main()
 
 ![rank][2]
 
-[1]: http://wizmann-tk-pic.u.qiniudn.com/blog-cf221-div2-d.png
-[2]: http://wizmann-tk-pic.u.qiniudn.com/blog-cf221-div2-rank.png
+[1]: https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/blog-cf221-div2-d.png
+[2]: https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/blog-cf221-div2-rank.png

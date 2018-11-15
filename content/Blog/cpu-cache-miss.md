@@ -9,7 +9,7 @@ Slug: cpu-cache-miss
 
 ## CPU cache 之 组相联
 
-![组相联](http://wizmann-tk-pic.u.qiniudn.com/blog-cpu-cache-2-way-set-assosiate.jpg)
+![组相联](https://github.com/Wizmann/assets/raw/master/wizmann-tk-pic/blog-cpu-cache-2-way-set-assosiate.jpg)
 
 组相联的实现和原理不必再赘述了。我想讨论的是，如何在编程中优化CPU的cache性能。
 

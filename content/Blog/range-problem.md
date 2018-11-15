@@ -46,13 +46,13 @@ Slug: range-problem
 
 我们以[Merge Intervals][5]一题为例。只要两个区间有交集，无论是哪一种形式的相交，那么我们就需要把这两个区间合并。
 
-![](http://wizmann-pic.qiniudn.com/18-2-20/85403056.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/18-2-20/85403056.jpg)
 
 所以，我们只需要能高效的判断两个区间**是否相交**，就可以解决这个问题了。
 
 但是在这里，我们反其道而行之，先来讨论一下**不相交**的情况。对于两个不相交的区间`A`和`B`，只存在两种情况，一是`A`在`B`左面，二是`A`在`B`右面。
 
-![](http://wizmann-pic.qiniudn.com/18-2-20/87075632.jpg)
+![](https://github.com/Wizmann/assets/raw/master/wizmann-pic/18-2-20/87075632.jpg)
 
 我们可以把区间的左右关系看成不相交区间的顺序关系，即：
 
