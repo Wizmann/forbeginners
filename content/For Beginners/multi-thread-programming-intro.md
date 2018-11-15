@@ -1,4 +1,4 @@
-Date: 2018-10-16
+Date: 2018-10-16 08:00:00
 Title: 多线程编程初步
 Tags: 多线程, multi-thread, mutex, conditional-variable
 Slug: multi-thread-programming-intro
