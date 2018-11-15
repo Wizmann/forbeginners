@@ -1,4 +1,4 @@
-Date: 2018-10-16
+Date: 2018-10-16 00:00:00
 Title: 开通了一个新栏目
 Tags: 闲聊
 Slug: hello-world-for-beginners
