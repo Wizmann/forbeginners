@@ -105,7 +105,7 @@ public:
         // 仍然因为竞争拿不到数据
         // 所以这里需要写一个循环
         while (q.empty()) {
-            cv.wait(); 
+            cv.wait(); // wait()会释放锁，允许put(value)函数向队列中写入新的值
         }
         int res = q.front();
         q.pop();
