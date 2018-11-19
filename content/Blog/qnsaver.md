@@ -1,5 +1,5 @@
 Date: 2018-11-16 22:23
-Title: 七牛云图床自救指南
+Title: 七牛云图床自救指南（附github图床小工具）
 Tags: 闲聊
 Slug: qnsaver
 
@@ -62,8 +62,46 @@ Slug: qnsaver
 ./qshell_linux_x64 qdownload qdisk_down.conf
 ```
 
-## 后记
+## 附录：使用Github做图床
 
-现在改用github做图床了，这个是真 点 白嫖了。
+Github的Blob文件都是存在S3的，墙外性能还是可以的。对于博客这种轻量使用场景已经足够用了，而且重要的是Github不会搞个智障操作强行锁你数据。
+
+第一步我们需要申请一个"Personal access token".
+
+![][2]
+
+然后允许这个token操纵我们的公开repos。注意，这个token非常重要，请不要泄露！
+
+![][3]
+
+最后我们可以使用这段代码上传图片（或者其它文件）了：
+
+```python
+#coding=utf-8
+import sys
+import base64
+import requests
+import datetime
+import json
+
+fn = sys.argv[1]
+
+with open(fn, 'rb') as f:
+    content = base64.b64encode(f.read())
+
+    prefix = datetime.datetime.now().strftime("%y-%m-%d")
+    upload_name = fn.split('/')[-1]
+
+    r = requests.put('https://api.github.com/repos/{{ your_id }}/{{ your_repo }}/{{ path_in_repo }}/' + prefix + "/" + upload_name,
+            headers = { "Authorization": "token {{ your_token }}" },
+            data = json.dumps({ 'message': 'upload data', 'content': content, 'branch': 'master' }))
+    info = r.json()
+    if 'content' in info:
+        print info['content']['download_url']
+    else:
+        print info
+```
 
 [1]: https://raw.githubusercontent.com/Wizmann/assets/master/wizmann-pic/18-11-16/20181116221134.png
+[2]: https://raw.githubusercontent.com/Wizmann/assets/master/wizmann-pic/18-11-19/WeChat%20Screenshot_20181119143629.png
+[3]: https://raw.githubusercontent.com/Wizmann/assets/master/wizmann-pic/18-11-19/WeChat%20Screenshot_20181119143932.png
