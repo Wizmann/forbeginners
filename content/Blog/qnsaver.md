@@ -92,7 +92,7 @@ with open(fn, 'rb') as f:
     prefix = datetime.datetime.now().strftime("%y-%m-%d")
     upload_name = fn.split('/')[-1]
 
-    r = requests.put('https://api.github.com/repos/{{ your_id }}/{{ your_repo }}/{{ path_in_repo }}/' + prefix + "/" + upload_name,
+    r = requests.put('https://api.github.com/repos/{{ your_id }}/{{ your_repo }}/contents/{{ path_in_repo }}/' + prefix + "/" + upload_name,
             headers = { "Authorization": "token {{ your_token }}" },
             data = json.dumps({ 'message': 'upload data', 'content': content, 'branch': 'master' }))
     info = r.json()
