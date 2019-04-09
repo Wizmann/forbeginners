@@ -30,7 +30,7 @@ SOCIAL = (('github', 'https://github.com/wizmann'),
 DEFAULT_PAGINATION = 10
 
 THEME = 'pelican-themes/pelican-bootstrap3'
-BOOTSTRAP_THEME='Flatly'
+BOOTSTRAP_THEME='flatly'
 DISQUS_SITENAME = u'wizmann'
 DEFAULT_DATE_FORMAT = ('%Y-%m-%d')
 
