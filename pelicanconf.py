@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Wizmann'
 SITENAME = u"Maerlyn's Rainbow"
-SITEURL = 'http://wizmann.tk'
+SITEURL = 'http://forbeginners.wizmann.tk'
 
 PATH = 'content'
 
@@ -30,7 +30,7 @@ SOCIAL = (('github', 'https://github.com/wizmann'),
 DEFAULT_PAGINATION = 10
 
 THEME = 'pelican-themes/pelican-bootstrap3'
-BOOTSTRAP_THEME='flatly'
+BOOTSTRAP_THEME='minty'
 DISQUS_SITENAME = u'wizmann'
 DEFAULT_DATE_FORMAT = ('%Y-%m-%d')
 
