@@ -26,10 +26,10 @@ CLOUDFILES_CONTAINER=my_cloudfiles_container
 DROPBOX_DIR=~/Dropbox/Public/
 
 GITHUB_REMOTE_NAME=origin
-GITHUB_REPO_SLUG=Wizmann/wizmann.github.com
+GITHUB_REPO_SLUG=Wizmann/forbeginners
 GITHUB_PAGES_BRANCH=master
 GITHUB_COMMIT_MSG=$(shell git --no-pager log --format=%s -n 1)  
-GH_CUSTOM_DOMAIN=wizmann.tk
+GH_CUSTOM_DOMAIN=forbeginners.wizmann.tk
 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
