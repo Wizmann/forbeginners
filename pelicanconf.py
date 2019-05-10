@@ -3,8 +3,8 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'Wizmann'
-SITENAME = u"Maerlyn's Rainbow"
-SITEURL = 'http://forbeginners.wizmann.tk'
+SITENAME = u"Maerlyn's Rainbow - For Beginners"
+SITEURL = 'http://wizmann.tk'
 
 PATH = 'content'
 
@@ -28,6 +28,14 @@ SOCIAL = (('github', 'https://github.com/wizmann'),
          )
 
 DEFAULT_PAGINATION = 10
+
+DISPLAY_CATEGORIES_ON_MENU = False
+DISPLAY_PAGES_ON_MENU = False
+
+MENUITEMS = (
+    ('Blog', 'https://wizmann.tk/'),
+    ('ForBeginners', '/category/forbeginners.html')
+)
 
 THEME = 'pelican-themes/pelican-bootstrap3'
 BOOTSTRAP_THEME='spacelab'
