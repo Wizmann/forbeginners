@@ -48,6 +48,8 @@ RELATIVE_URLS = True
 PLUGIN_PATH = ["pelican-plugins"]
 PLUGINS = ["sitemap", "summary", 'tag_cloud', 'i18n_subsites', 'render_math']
 
+MATH_JAX = {'align': 'left'}
+
 JINJA_ENVIRONMENT = {
     'extensions': ['jinja2.ext.i18n'],
 }
