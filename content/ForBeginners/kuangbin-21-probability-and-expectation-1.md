@@ -177,10 +177,8 @@ $$
 我们可以列出期望的方程，设我们已经投出了`i`面，还有`n - i`面没有投出，`dp[i]`代表还需要投的次数的期望。此时有：
 
 $$
-dp[i] = \frac{i}{n} \times dp[i] + \frac{n - i}{n} \times dp[i + 1] + 1
-
-\Downarrow
-
+dp[i] = \frac{i}{n} \times dp[i] + \frac{n - i}{n} \times dp[i + 1] + 1\\
+\Downarrow\\
 dp[i] = dp[i + 1] + \frac{n}{n - i}
 $$
 
