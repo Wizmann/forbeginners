@@ -46,7 +46,7 @@ DEFAULT_DATE_FORMAT = ('%Y-%m-%d')
 RELATIVE_URLS = True
 
 PLUGIN_PATH = ["pelican-plugins"]
-PLUGINS = ["sitemap", "summary", 'tag_cloud', 'i18n_subsites']
+PLUGINS = ["sitemap", "summary", 'tag_cloud', 'i18n_subsites', 'render_math']
 
 JINJA_ENVIRONMENT = {
     'extensions': ['jinja2.ext.i18n'],
