@@ -25,18 +25,18 @@ Slug: kuangbin-21-probability-and-expectation-1
 
 我们可以列出等式：
 
-```math
+$$
  E = P_{0} Ave_{0} + P_{1} (Ave_{1} + E)
-```
+$$
 
 * 如果我们选中了正数门，那么会消耗`Ave0`的时间，并且走出迷宫。
 * 如果我们选中的负数门，那么会消耗`Ave1`的时间，回到原地，需要期望为`E`时间才能走出迷宫。
 
 接下来我们进行等式的进行一步推导，得到：
 
-```math
+$$
 E = \frac{Sum_{0} + Sum_{1}}{N_{0}}
-```
+$$
 
 最后使用分数化简就可以得到最终答案。
 
@@ -60,9 +60,9 @@ E = \frac{Sum_{0} + Sum_{1}}{N_{0}}
 
 设`dp[i]`为从点i到点n所需要步数的期望。`P`代表从`i`到`i+k`的概率。
 
-```math
+$$
 dp[i] = \sum{dp[i + k] * P}
-```
+$$
 
 代码：[LightOJ/1030.cc][4]
 
@@ -82,10 +82,9 @@ dp[i] = \sum{dp[i + k] * P}
 
 `P`代表数字`i`约数个数的倒数。
 
-
-```math
+$$
 dp[i] = \sum{dp[i / k] * P} \quad \mid \quad  i \bmod k == 0
-```
+$$
 
 代码：[LightOJ/1038.cc][6]
 
@@ -105,9 +104,9 @@ dp[i] = \sum{dp[i / k] * P} \quad \mid \quad  i \bmod k == 0
 
 由于银行的个数`n`和抢银行的收益`m[i]`的乘积最大才10000。所以可以用`dp[k]`表示抢银行的总收益为`k`时被抓的概率。
 
-```math
+$$
 dp[k + m_{i}] = \min(dp[k + m_{i}], 1 - (1 - dp[k])(1 - q_{i}))
-```
+$$
 
 代码：[LightOJ/1079.cc][8]
 
@@ -123,11 +122,9 @@ dp[k + m_{i}] = \min(dp[k + m_{i}], 1 - (1 - dp[k])(1 - q_{i}))
 
 生日悖论问题。
 
-```math
-
+$$
 P = 1 \times \frac{n - 1}{n} \times \frac{n - 2}{n} \dotsb \frac{n - m + 1}{n}
-
-```
+$$
 
 因为n比较大以及数据组数比较多，所以我们可以预处理出所有的结果。
 
@@ -153,17 +150,15 @@ P = 1 \times \frac{n - 1}{n} \times \frac{n - 2}{n} \dotsb \frac{n - m + 1}{n}
 
 对于没有梯子或蛇的格子`i`，有：
 
-```math
-
+$$
 E_{i} = \frac{E_{i + 1} + E_{i + 2} + \dotsb + E_{i + 6}}{6} + 1 
-
-```
+$$
 
 对于有梯子或蛇的格子`i`，如果其终点为格子`j`，有：
 
-```math
+$$
 E_{i} = E_{j}
-```
+$$
 
 我们联立方程组，然后使用高斯消元即可求解。
 
@@ -181,15 +176,13 @@ E_{i} = E_{j}
 
 我们可以列出期望的方程，设我们已经投出了`i`面，还有`n - i`面没有投出，`dp[i]`代表还需要投的次数的期望。此时有：
 
-```math
-
+$$
 dp[i] = \frac{i}{n} \times dp[i] + \frac{n - i}{n} \times dp[i + 1] + 1
 
 \Downarrow
 
 dp[i] = dp[i + 1] + \frac{n}{n - i}
-
-```
+$$
 
 代码：[LightOJ/1248.cc][14]
 
