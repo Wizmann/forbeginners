@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zhs" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>[HackerRank] Digit Products - Solution - Maerlyn's Rainbow - For Beginners</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/hackerrank-digit-products-solution.html">
+
+        <meta name="author" content="Wizmann" />
+        <meta name="keywords" content="algorithm,hackerrank,solution" />
+        <meta name="description" content="最近实在没什么可写的，只好写个题解来水一下。 Description Link: Click me! We define a function D(x) which equals to the digit products of an integer of base 10. For example: D(0) == 0 D(123) == 1 * 2 * 3 == 6 D(234) == 2 * 3 * 4 == 24 D(104) == 1 * 0 * 4 == 0 Given the range …" />
+
+        <meta property="og:site_name" content="Maerlyn's Rainbow - For Beginners" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="[HackerRank] Digit Products - Solution"/>
+        <meta property="og:url" content="/hackerrank-digit-products-solution.html"/>
+        <meta property="og:description" content="最近实在没什么可写的，只好写个题解来水一下。 Description Link: Click me! We define a function D(x) which equals to the digit products of an integer of base 10. For example: D(0) == 0 D(123) == 1 * 2 * 3 == 6 D(234) == 2 * 3 * 4 == 24 D(104) == 1 * 0 * 4 == 0 Given the range …"/>
+        <meta property="article:published_time" content="2020-03-21" />
+            <meta property="article:section" content="ForBeginners" />
+            <meta property="article:tag" content="algorithm" />
+            <meta property="article:tag" content="hackerrank" />
+            <meta property="article:tag" content="solution" />
+            <meta property="article:author" content="Wizmann" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.spacelab.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/solarizedlight.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Maerlyn's Rainbow - For Beginners ATOM Feed"/>
+
+
+
+        <link href="/feeds/forbeginners.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Maerlyn's Rainbow - For Beginners ForBeginners ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+Maerlyn's Rainbow - For Beginners            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                    <li><a href="https://wizmann.tk/">Blog</a></li>
+                    <li><a href="/category/forbeginners.html">ForBeginners</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/hackerrank-digit-products-solution.html"
+                       rel="bookmark"
+                       title="Permalink to [HackerRank] Digit Products - Solution">
+                        [HackerRank] Digit Products - Solution
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2020-03-21T00:00:00+08:00"> 2020-03-21</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="/tag/algorithm.html">algorithm</a>
+        /
+	<a href="/tag/hackerrank.html">hackerrank</a>
+        /
+	<a href="/tag/solution.html">solution</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <blockquote>
+<p>最近实在没什么可写的，只好写个题解来水一下。</p>
+</blockquote>
+<h2>Description</h2>
+<p>Link: <a href="https://www.hackerrank.com/challenges/digit-products/problem">Click me!</a></p>
+<p>We define a function <code>D(x)</code> which equals to the digit products of an integer of base 10.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span>D(0) == 0
+D(123) == 1 * 2 * 3 == 6
+D(234) == 2 * 3 * 4 == 24
+D(104) == 1 * 0 * 4 == 0
+</pre></div>
+
+
+<p>Given the range <code>[A, B]</code>, and we want to know how many numbers <code>x</code> in the range satisfies <code>D(x) == K</code>.</p>
+<p>Data constraints:</p>
+<ul>
+<li>T &lt;= 10000</li>
+<li>1 &lt;= A &lt;= B &lt;= 10^100</li>
+<li>1 &lt;= K &lt;= 10^18</li>
+</ul>
+<h2>Solution</h2>
+<p>Because the range could be very large, it means the brute-force way is not feasible.</p>
+<p>We mark the number of <code>D(x) == K</code> in range <code>[A, B]</code> as <code>f(A, B)</code>. So it's easy to know that <code>f(A, B) = f(0, B) - f(0, A - 1)</code>. We can mark <code>f(0, A)</code> as <code>F(A)</code>.</p>
+<p>So, the problem has turn into getting the value of <code>F(A)</code>. Here we use <code>A = 233</code> as an example. For those numbers in one digit (0~9) and two digits (10~99), we can arbitrary enumerate all the possible combination of digits to get the answer. </p>
+<p>But for the numbers with 3 digits, we have to make sure that the number we get is less or equal than <code>A</code>. And right after the higher digits is less than the higher digits of <code>A</code>, we can do the enumerating job. </p>
+<p>For example, if we have the prefix of "1xy", we can set digit <code>x</code> and <code>y</code> to any value, and the value of the number is definitely less than <code>A</code>. But if the prefix is "2xy", we have to make sure that <code>x &lt;= 3</code>.</p>
+<blockquote>
+<p>This idea is coming from digit DP, if you doesn't familiar with it, please refer <a href="https://leetcode.com/problems/number-of-digit-one">link1</a> and <a href="https://leetcode.com/problems/numbers-at-most-n-given-digit-set">link2</a>.</p>
+</blockquote>
+<p>And the next step for make the enumerating more efficient. We divide this for 3 different parts:</p>
+<ol>
+<li>for digits [5, 7, 9], we can put them anywhere we want</li>
+<li>for digits [2, 3, 4, 6, 8, 9], they are the factors of 2 and 3</li>
+<li>for any other digits left, we fill it with 1</li>
+</ol>
+<p>For scenario 1, we can calculate the answer by the number of permutation formula. For scenario 2 and 3, we can use DFS. And the number of digits is at most 100 and the number of factor 2 and 3 could at most 60. It means we can pre-process all the reseult of the DFS to accerlate our code.</p>
+<p>So, the code have different parts. And we'd better add tests for them to make sure it works as expected.</p>
+<p>The first part is to find <code>A - 1</code>. As the number <code>A</code> is very large and can only be represent in string. We have to implement a function to do that job:</p>
+<div class="highlight"><pre><span></span><span class="c1">// this code is a piece of trash, but it works anyway</span>
+<span class="n">string</span> <span class="nf">minus_one</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="s">&quot;1&quot;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">&quot;0&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-=</span> <span class="sc">&#39;0&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">g</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">u</span> <span class="o">=</span> <span class="kt">int</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="n">g</span><span class="p">;</span>
+        <span class="n">g</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">u</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">u</span> <span class="o">+=</span> <span class="mi">10</span><span class="p">;</span>
+            <span class="n">g</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">u</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">l</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">string</span> <span class="n">res</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="cm">/* pass */</span><span class="p">;</span> <span class="n">l</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">l</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">res</span> <span class="o">+=</span> <span class="sc">&#39;0&#39;</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="n">l</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="c1">// cout &lt;&lt; res &lt;&lt; endl;</span>
+    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/* </span>
+<span class="cm">    assert(minus_one(&quot;100&quot;) == &quot;99&quot;);</span>
+<span class="cm">    assert(minus_one(&quot;10000&quot;) == &quot;9999&quot;);</span>
+<span class="cm">    assert(minus_one(&quot;10001&quot;) == &quot;10000&quot;);</span>
+<span class="cm">    assert(minus_one(&quot;36&quot;) == &quot;35&quot;);</span>
+<span class="cm">*/</span>
+</pre></div>
+
+
+<p>The second part is to enumerate the valid combination of digits:</p>
+<div class="highlight"><pre><span></span><span class="c1">// pre-process this at the very begining of our code</span>
+<span class="n">llint</span> <span class="n">DFS2</span><span class="p">[</span><span class="n">N</span><span class="p">][</span><span class="n">N</span><span class="p">][</span><span class="n">N</span><span class="p">];</span>
+
+<span class="c1">// the factorial of x</span>
+<span class="n">llint</span> <span class="n">AA</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+<span class="c1">// `1 / AA[x]`, calculated by &quot;Fermat&#39;s little theorem&quot;</span>
+<span class="n">llint</span> <span class="n">INV</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+
+<span class="n">llint</span> <span class="nf">A</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">m</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m</span> <span class="o">&gt;</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">AA</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">*</span> <span class="n">INV</span><span class="p">[</span><span class="n">n</span> <span class="o">-</span> <span class="n">m</span><span class="p">]</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// n : the number of digits</span>
+<span class="c1">// c2 : the number of factor 2</span>
+<span class="c1">// c3 : the number of factor 3</span>
+<span class="n">llint</span> <span class="nf">dfs2</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c2</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c3</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="n">c2</span> <span class="o">/</span> <span class="mi">3</span> <span class="o">+</span> <span class="n">c3</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">assert</span><span class="p">(</span><span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">c2</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">c3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span><span class="o">?</span> <span class="mi">1</span><span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">c2</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">c3</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">DFS2</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">c2</span><span class="p">][</span><span class="n">c3</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">DFS2</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">c2</span><span class="p">][</span><span class="n">c3</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="n">llint</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">res</span> <span class="o">+</span> <span class="n">dfs2</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span><span class="p">))</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>        <span class="c1">// 1</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">res</span> <span class="o">+</span> <span class="n">dfs2</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c3</span><span class="p">))</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>    <span class="c1">// 2</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">res</span> <span class="o">+</span> <span class="n">dfs2</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>    <span class="c1">// 3</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">res</span> <span class="o">+</span> <span class="n">dfs2</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c2</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">c3</span><span class="p">))</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>    <span class="c1">// 4</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">res</span> <span class="o">+</span> <span class="n">dfs2</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c3</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span><span class="c1">// 6</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">res</span> <span class="o">+</span> <span class="n">dfs2</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c2</span> <span class="o">-</span> <span class="mi">3</span><span class="p">,</span> <span class="n">c3</span><span class="p">))</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>    <span class="c1">// 8</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">res</span> <span class="o">+</span> <span class="n">dfs2</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span> <span class="o">-</span> <span class="mi">2</span><span class="p">))</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>    <span class="c1">// 9</span>
+    <span class="k">return</span> <span class="n">DFS2</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">c2</span><span class="p">][</span><span class="n">c3</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">llint</span> <span class="nf">solve2</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c2</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c3</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">DFS2</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">c2</span><span class="p">][</span><span class="n">c3</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="c1">// n : the number of digits</span>
+<span class="c1">// k[i] : the number of factor `i`</span>
+<span class="n">llint</span> <span class="nf">calc</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// cout &lt;&lt; &quot;calc: &quot; &lt;&lt; n &lt;&lt; &#39; &#39; &lt;&lt; k &lt;&lt; endl;</span>
+    <span class="kt">int</span> <span class="n">tot</span> <span class="o">=</span> <span class="n">accumulate</span><span class="p">(</span><span class="n">k</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">k</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">tot</span> <span class="o">==</span> <span class="mi">0</span><span class="o">?</span> <span class="mi">1</span><span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">tot</span> <span class="o">-=</span> <span class="n">k</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">k</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+
+    <span class="c1">// number of permutation formula</span>
+    <span class="n">llint</span> <span class="n">res</span> <span class="o">=</span> <span class="n">A</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">tot</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">res</span> <span class="o">*</span> <span class="n">INV</span><span class="p">[</span><span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span> 
+    <span class="p">}</span>
+
+    <span class="c1">// dfs part</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;=</span> <span class="n">tot</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">*</span> <span class="n">solve2</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">tot</span><span class="p">,</span> <span class="n">k</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">k</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*</span>
+<span class="cm">    assert(calc(5, {0, 0, 2, 3, 0, 1, 0, 1, 0, 0}) == 300);</span>
+<span class="cm">    assert(solve2(1, 1, 1) == 1);</span>
+<span class="cm">*/</span>
+</pre></div>
+
+
+<p>The third part is the "digit DP":</p>
+<div class="highlight"><pre><span></span><span class="n">vector</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">factors</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+
+<span class="c1">// digit DP</span>
+<span class="n">llint</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">cur</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">k</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">lt</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">cur</span> <span class="o">==</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">auto</span> <span class="n">ksum</span> <span class="o">=</span> <span class="n">accumulate</span><span class="p">(</span><span class="n">k</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">k</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">ksum</span> <span class="o">==</span> <span class="mi">0</span><span class="o">?</span> <span class="mi">1</span><span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">llint</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">auto</span> <span class="n">kk</span> <span class="o">=</span> <span class="n">k</span><span class="p">;</span>
+        <span class="kt">bool</span> <span class="n">flag</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">p</span> <span class="p">:</span> <span class="n">factors</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">{</span>
+            <span class="n">kk</span><span class="p">[</span><span class="n">p</span><span class="p">.</span><span class="n">first</span><span class="p">]</span> <span class="o">-=</span> <span class="n">p</span><span class="p">.</span><span class="n">second</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">kk</span><span class="p">[</span><span class="n">p</span><span class="p">.</span><span class="n">first</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">flag</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">flag</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">continue</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">lt</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">res</span> <span class="o">+</span> <span class="n">calc</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">cur</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">kk</span><span class="p">))</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">s</span><span class="p">[</span><span class="n">cur</span><span class="p">])</span> <span class="p">{</span>
+                <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">res</span> <span class="o">+</span> <span class="n">dfs</span><span class="p">(</span><span class="n">cur</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">kk</span><span class="p">,</span> <span class="nb">false</span><span class="p">))</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">s</span><span class="p">[</span><span class="n">cur</span><span class="p">])</span> <span class="p">{</span>
+                <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">res</span> <span class="o">+</span> <span class="n">calc</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">cur</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">kk</span><span class="p">))</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// s : the number of F(A)</span>
+<span class="c1">// k : the number k described in the problem description</span>
+<span class="n">llint</span> <span class="nf">do_solve</span><span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">,</span> <span class="n">llint</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">s</span> <span class="o">==</span> <span class="s">&quot;0&quot;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-=</span> <span class="sc">&#39;0&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">ks</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="c1">// factorization</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">k</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">ks</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+            <span class="n">k</span> <span class="o">/=</span> <span class="n">i</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">k</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">llint</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">res</span> <span class="o">+</span> <span class="n">calc</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">i</span><span class="p">,</span> <span class="n">ks</span><span class="p">))</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">res</span> <span class="o">+</span> <span class="n">dfs</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">ks</span><span class="p">,</span> <span class="nb">false</span><span class="p">))</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*</span>
+<span class="cm">    assert(do_solve(&quot;666&quot;, 66) == 0); </span>
+<span class="cm">    assert(do_solve(&quot;666&quot;, 12) == 19); </span>
+<span class="cm">    assert(do_solve(&quot;66666&quot;, 12) == 125); </span>
+<span class="cm">    assert(do_solve(&quot;666666&quot;, 16) == 226); </span>
+<span class="cm">    assert(do_solve(&quot;66666666&quot;, 8) == 329); </span>
+<span class="cm">    assert(do_solve(&quot;20&quot;, 3) == 2); // 3, 13</span>
+<span class="cm">    assert(do_solve(&quot;0&quot;, 3) == 0);</span>
+<span class="cm">    assert(do_solve(&quot;9&quot;, 3) == 1);</span>
+<span class="cm">    assert(solve(&quot;10&quot;, &quot;10000000&quot;, 3780) == 15540);</span>
+<span class="cm">    assert(solve(&quot;10&quot;, &quot;1000000&quot;, 40) == 364);</span>
+<span class="cm">*/</span>
+</pre></div>
+
+
+<p>And the last step is to finish the pre-processing code.</p>
+<div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">factors</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span> <span class="p">}</span> <span class="p">};</span>
+    <span class="n">factors</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span> <span class="p">}</span> <span class="p">};</span>
+    <span class="n">factors</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span> <span class="p">}</span> <span class="p">};</span>
+    <span class="n">factors</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span> <span class="p">}</span> <span class="p">};</span>
+    <span class="n">factors</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span> <span class="p">},</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">}</span> <span class="p">};</span>
+    <span class="n">factors</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span> <span class="p">}</span> <span class="p">};</span>
+    <span class="n">factors</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">}</span> <span class="p">};</span>
+    <span class="n">factors</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span> <span class="p">}</span> <span class="p">};</span>
+
+    <span class="n">AA</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">AA</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">AA</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">i</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">INV</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">mypow</span><span class="p">(</span><span class="n">AA</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">MOD</span> <span class="o">-</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">memset</span><span class="p">(</span><span class="n">DFS2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">DFS2</span><span class="p">));</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">DFS2</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">dfs2</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>You can find the full code <a href="https://github.com/Wizmann/ACM-ICPC/tree/master/HackerRank/Mathematics/Combinatorics">here</a>.</p>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'wizmann'; // required: replace example with your forum shortname
+
+            var disqus_config = function () {
+                this.language = "zhs";
+
+                        this.page.identifier = '2020-03-21-hackerrank-digit-products-solution';
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://github.com/wizmann"><i class="fa fa-github-square fa-lg"></i> github</a></li>
+    <li class="list-group-item"><a href="http://wizmann.tk/feeds/all.atom.xml"><i class="fa fa-rss-square fa-lg"></i> rss</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group " id="tags">
+    <li class="list-group-item tag-1">
+      <a href="/tag/shui-ti.html">水题</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="/tag/ti-jie.html">题解</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="/tag/solution.html">solution</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="/tag/mutex.html">mutex</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="/tag/duo-xian-cheng.html">多线程</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="/tag/xian-liao.html">闲聊</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="/tag/hackerrank.html">hackerrank</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="/tag/qi-wang.html">期望</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="/tag/algorithm.html">algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="/tag/gai-lu.html">概率</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="/tag/multi-thread.html">multi-thread</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="/tag/conditional-variable.html">conditional-variable</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="http://getpelican.com/" target="_blank">Pelican</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2020 Wizmann
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'wizmann'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+
+</body>
+</html>

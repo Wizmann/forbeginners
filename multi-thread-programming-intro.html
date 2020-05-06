@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zhs" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>多线程编程初步 - Maerlyn's Rainbow - For Beginners</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/multi-thread-programming-intro.html">
+
+        <meta name="author" content="Wizmann" />
+        <meta name="keywords" content="多线程,multi-thread,mutex,conditional-variable" />
+        <meta name="description" content="前言 非常不喜欢这种“X一峰”式的文章。但是为了伟大的教育事业，还是要写一点的。 线程安全的定义 无论操作系统如何调度线程，无论这些线程的执行顺序如何交织。一个函数（或类）在多个线程同时访问时能表现出正确的行为，而无需调用端代码进行额外的同步或协调操作。 划重点： 无论如何调度 无需额外的同步或协调操作 总能表现出正确的行为 竞态条件（race condition） 竞态条件描述的是一个系统或者进程的输出依赖于不受控制的事件出现顺序或者出现时机。例如两个进程“同时读写”一块内存，其结果一定是不受控制的。 “同时读写”的定义包括： 一读一写 一写多读 多写一读 多写多读 多写 也就是说，只要包含“并发”和“写操作”两个特性，就会出现竞态条件。而“多读”一般来说是安全的。 同时也要注意，这里的读与写是物理意义上的读写，而不是逻辑意义上的。有一些函数看起来只有读操作，但其内部仍然包括了对数据的修改，这里需要注意甄别。 Mutex - 互斥锁 …" />
+
+        <meta property="og:site_name" content="Maerlyn's Rainbow - For Beginners" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="多线程编程初步"/>
+        <meta property="og:url" content="/multi-thread-programming-intro.html"/>
+        <meta property="og:description" content="前言 非常不喜欢这种“X一峰”式的文章。但是为了伟大的教育事业，还是要写一点的。 线程安全的定义 无论操作系统如何调度线程，无论这些线程的执行顺序如何交织。一个函数（或类）在多个线程同时访问时能表现出正确的行为，而无需调用端代码进行额外的同步或协调操作。 划重点： 无论如何调度 无需额外的同步或协调操作 总能表现出正确的行为 竞态条件（race condition） 竞态条件描述的是一个系统或者进程的输出依赖于不受控制的事件出现顺序或者出现时机。例如两个进程“同时读写”一块内存，其结果一定是不受控制的。 “同时读写”的定义包括： 一读一写 一写多读 多写一读 多写多读 多写 也就是说，只要包含“并发”和“写操作”两个特性，就会出现竞态条件。而“多读”一般来说是安全的。 同时也要注意，这里的读与写是物理意义上的读写，而不是逻辑意义上的。有一些函数看起来只有读操作，但其内部仍然包括了对数据的修改，这里需要注意甄别。 Mutex - 互斥锁 …"/>
+        <meta property="article:published_time" content="2018-10-16" />
+            <meta property="article:section" content="ForBeginners" />
+            <meta property="article:tag" content="多线程" />
+            <meta property="article:tag" content="multi-thread" />
+            <meta property="article:tag" content="mutex" />
+            <meta property="article:tag" content="conditional-variable" />
+            <meta property="article:author" content="Wizmann" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.spacelab.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/solarizedlight.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Maerlyn's Rainbow - For Beginners ATOM Feed"/>
+
+
+
+        <link href="/feeds/forbeginners.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Maerlyn's Rainbow - For Beginners ForBeginners ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+Maerlyn's Rainbow - For Beginners            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                    <li><a href="https://wizmann.tk/">Blog</a></li>
+                    <li><a href="/category/forbeginners.html">ForBeginners</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/multi-thread-programming-intro.html"
+                       rel="bookmark"
+                       title="Permalink to 多线程编程初步">
+                        多线程编程初步
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2018-10-16T08:00:00+08:00"> 2018-10-16</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="/tag/duo-xian-cheng.html">多线程</a>
+        /
+	<a href="/tag/multi-thread.html">multi-thread</a>
+        /
+	<a href="/tag/mutex.html">mutex</a>
+        /
+	<a href="/tag/conditional-variable.html">conditional-variable</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <h2>前言</h2>
+<p>非常不喜欢这种“X一峰”式的文章。但是为了伟大的教育事业，还是要写一点的。</p>
+<h2>线程安全的定义</h2>
+<p>无论操作系统如何调度线程，无论这些线程的执行顺序如何交织。一个函数（或类）在多个线程同时访问时能表现出正确的行为，而无需调用端代码进行额外的同步或协调操作。</p>
+<p>划重点：</p>
+<ul>
+<li>无论如何调度</li>
+<li>无需额外的同步或协调操作</li>
+<li>总能表现出正确的行为</li>
+</ul>
+<h2>竞态条件（race condition）</h2>
+<p>竞态条件描述的是一个系统或者进程的输出依赖于不受控制的事件出现顺序或者出现时机。例如两个进程“同时读写”一块内存，其结果一定是不受控制的。</p>
+<p>“同时读写”的定义包括：</p>
+<ul>
+<li>一读一写</li>
+<li>一写多读</li>
+<li>多写一读</li>
+<li>多写多读</li>
+<li>多写</li>
+</ul>
+<p>也就是说，只要包含“并发”和“写操作”两个特性，就会出现竞态条件。而“多读”一般来说是安全的。</p>
+<p>同时也要注意，这里的读与写是物理意义上的读写，而不是逻辑意义上的。有一些函数看起来只有读操作，但其内部仍然包括了对数据的修改，这里需要注意甄别。</p>
+<h2>Mutex - 互斥锁</h2>
+<p>互斥锁（Mutual exclusion，缩写 Mutex）是一种用于多线程编程中，防止两条线程同时对同一公共资源（比如全局变量）进行读写的机制。该目的通过将代码切片成一个一个的临界区域（critical section）达成。临界区域指的是一块对公共资源进行访问的代码。一个程序、进程、线程可以拥有多个临界区域。</p>
+<p>应用场景如下：一段代码（甲）正在分步修改一块数据。这时，另一条线程（乙）由于一些原因被唤醒。如果乙此时去读取甲正在修改的数据，而甲碰巧还没有完成整个修改过程，这个时候这块数据的状态就处在极大的不确定状态中，读取到的数据当然也是有问题的。更严重的情况是乙也往这块地方写数据，这样的一来，后果将变得不可收拾。</p>
+<p>因此，多个线程间共享的数据必须被保护。达到这个目的的方法，就是确保同一时间只有一个临界区域处于运行状态，而其他的临界区域，无论是读是写，都必须被挂起并且不能获得运行机会。</p>
+<h3>一个线程安全的计数器</h3>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Counter</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">Counter</span><span class="p">()</span><span class="o">:</span> <span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="kt">int</span> <span class="n">get_value</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">value</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">add_value</span><span class="p">(</span><span class="kt">int</span> <span class="n">delta</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">mutex</span><span class="p">.</span><span class="n">lock</span><span class="p">();</span>
+        <span class="n">value</span> <span class="o">+=</span> <span class="n">delta</span><span class="p">;</span>
+        <span class="n">mutex</span><span class="p">.</span><span class="n">unlock</span><span class="p">();</span>
+        <span class="k">return</span> <span class="n">value</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="k">private</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">value</span><span class="p">;</span>
+    <span class="n">MutexLock</span> <span class="n">mutex</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+
+
+<p><code>MutexLock</code>一个封装了操作系统互斥锁的类，其方法有加锁<code>lock()</code>和解锁<code>unlock()</code>。</p>
+<h3>死锁与饥饿</h3>
+<p>死锁（Deadlock)，指的是两个以上的运算单元（线程），双方都等待对方释放资源，但是没有一方释放自身所拥有的资源。这种情况被称为死锁。</p>
+<p>一个简单的避免死锁的方式，是在某运算单元在不能获取所需要的资源时，释放自身所占有的资源，并进行等待。</p>
+<p>饥饿指的是一个运算单元尽管可以继续执行，但是不能获取所需要的资源，从而不能调度执行的情形。</p>
+<p>划重点：</p>
+<ul>
+<li>死锁：两个山羊过独木桥，谁都不退让</li>
+<li>饥饿：两个人传球，第三个人没有球玩只能看着</li>
+</ul>
+<h2>条件变量（Condition Variable)</h2>
+<p>概念上，一个条件变量就是一个线程队列(queue), 其中的线程正等待某个条件变为真。当一个线程等待一个条件变量时，其它线程可以改变管程的状态，从而唤醒一个或多个正在队列中的线程。</p>
+<p>划重点：</p>
+<ul>
+<li>条件变量：饭熟了叫我</li>
+</ul>
+<h3>一个线程安全的生产者消费者队列</h3>
+<div class="highlight"><pre><span></span><span class="c1">// 在消费者把队列里的数据都读空之后</span>
+<span class="c1">// 再次读取会挂起，直到生产者向队列中放入新的数据为止</span>
+<span class="k">class</span> <span class="nc">ConsumerProducerQueue</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">ConsumerProducerQueue</span><span class="p">()</span><span class="o">:</span> <span class="n">cv</span><span class="p">(</span><span class="n">mutex</span><span class="p">)</span> <span class="p">{}</span>
+
+    <span class="kt">void</span> <span class="n">put</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">mutex</span><span class="p">.</span><span class="n">lock</span><span class="p">();</span> <span class="c1">// 修改共享资源要加锁</span>
+        <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+        <span class="n">mutex</span><span class="p">.</span><span class="n">unlock</span><span class="p">();</span> <span class="c1">// 修改完了要释放锁</span>
+        <span class="n">cv</span><span class="p">.</span><span class="n">signal</span><span class="p">();</span> <span class="c1">// 告诉消费者们饭已OK了，过来咪西吧</span>
+    <span class="p">}</span>
+
+    <span class="kt">int</span> <span class="n">get</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">mutex</span><span class="p">.</span><span class="n">lock</span><span class="p">();</span>
+        <span class="c1">// 有的消费者线程在得到信号后</span>
+        <span class="c1">// 仍然因为竞争拿不到数据</span>
+        <span class="c1">// 所以这里需要写一个循环</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">cv</span><span class="p">.</span><span class="n">wait</span><span class="p">();</span> <span class="c1">// wait()会释放锁，允许put(value)函数向队列中写入新的值</span>
+        <span class="p">}</span>
+        <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+        <span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+        <span class="n">mutex</span><span class="p">.</span><span class="n">unlock</span><span class="p">();</span>
+        <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="k">private</span><span class="o">:</span>
+    <span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">q</span><span class="p">;</span>
+    <span class="n">ConditionVariable</span> <span class="n">cv</span><span class="p">;</span>
+    <span class="n">MutexLock</span> <span class="n">mutex</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+
+
+<h2>实战：线程安全的Singleton实现</h2>
+<div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">Singleton</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">Singleton</span><span class="p">()</span><span class="o">:</span> <span class="n">instance</span><span class="p">(</span><span class="k">nullptr</span><span class="p">)</span> <span class="p">{}</span>
+
+    <span class="n">T</span><span class="o">*</span> <span class="n">get_instance</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">instance</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">instance</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">mutex</span><span class="p">.</span><span class="n">lock</span><span class="p">();</span>
+        <span class="c1">// 这里为什么还需要检查呢？</span>
+        <span class="c1">// 因为在上锁之前，instance仍有可能被修改</span>
+        <span class="c1">// 如果重复创建实例，就会产生内存泄漏</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">instance</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">T</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="n">mutex</span><span class="p">.</span><span class="n">unlock</span><span class="p">();</span>
+        <span class="k">return</span> <span class="n">instance</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="k">private</span><span class="o">:</span>
+    <span class="n">Mutex</span> <span class="n">mutex</span><span class="p">;</span>
+    <span class="n">T</span><span class="o">*</span> <span class="n">instance</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+
+
+<h2>高级话题：CAS - Compare And Swap</h2>
+<p>比较并替换（compare-and-swap, CAS）是一个用于多线程同步的原子操作。</p>
+<p>其工作流程是：</p>
+<div class="highlight"><pre><span></span>def cmpxchg(val, oldval, newval):
+    if val == oldval:
+        val = newval
+        return True
+    return False
+</pre></div>
+
+
+<p>也就是说，只有当val等于oldval时，我们才会将val的值替换成newval。在多线程的场景下，cmpxchg用来保证多线程写的原子性。</p>
+<p>例如，线程1和线程2都要写入val变量，但是我们需要保证只有一个线程能写成功。使用cmpxchg，能保证只有一个线程能成功的将val变量替换成新值，写失败的线程会得到False的返回值。</p>
+<p>CAS经常用来实现无锁的数据结构，因为常规的互斥锁的每次加锁和解锁操作都需要进入内核态，造成非常大的开销。</p>
+<h2>扩展阅读</h2>
+<ul>
+<li><a href="https://book.douban.com/subject/20471211/">Linux多线程服务端编程 - 陈硕</a></li>
+<li><a href="https://book.douban.com/subject/10484692/">Java并发编程实战</a></li>
+<li><a href="http://pages.cs.wisc.edu/~remzi/OSTEP/">Operating Systems: Three Easy Pieces</a></li>
+</ul>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'wizmann'; // required: replace example with your forum shortname
+
+            var disqus_config = function () {
+                this.language = "zhs";
+
+                        this.page.identifier = '2018-10-16-multi-thread-programming-intro';
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://github.com/wizmann"><i class="fa fa-github-square fa-lg"></i> github</a></li>
+    <li class="list-group-item"><a href="http://wizmann.tk/feeds/all.atom.xml"><i class="fa fa-rss-square fa-lg"></i> rss</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group " id="tags">
+    <li class="list-group-item tag-1">
+      <a href="/tag/shui-ti.html">水题</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="/tag/ti-jie.html">题解</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="/tag/solution.html">solution</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="/tag/mutex.html">mutex</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="/tag/duo-xian-cheng.html">多线程</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="/tag/xian-liao.html">闲聊</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="/tag/hackerrank.html">hackerrank</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="/tag/qi-wang.html">期望</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="/tag/algorithm.html">algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="/tag/gai-lu.html">概率</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="/tag/multi-thread.html">multi-thread</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="/tag/conditional-variable.html">conditional-variable</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="http://getpelican.com/" target="_blank">Pelican</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2020 Wizmann
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'wizmann'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+
+</body>
+</html>

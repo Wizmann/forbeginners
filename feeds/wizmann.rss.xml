@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Maerlyn's Rainbow - For Beginners - Wizmann</title><link>/</link><description></description><lastBuildDate>Sat, 21 Mar 2020 00:00:00 +0800</lastBuildDate><item><title>[HackerRank] Digit Products - Solution</title><link>/hackerrank-digit-products-solution.html</link><description>&lt;blockquote&gt;
+&lt;p&gt;最近实在没什么可写的，只好写个题解来水一下。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Description&lt;/h2&gt;
+&lt;p&gt;Link: &lt;a href="https://www.hackerrank.com/challenges/digit-products/problem"&gt;Click me!&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;We define a function &lt;code&gt;D(x)&lt;/code&gt; which equals to the digit products of an integer of base 10.&lt;/p&gt;
+&lt;p&gt;For example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;D(0) == 0
+D(123) == 1 * 2 * 3 == 6
+D(234) == 2 * 3 * 4 == 24
+D(104) == 1 * 0 * 4 == 0
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Given the range …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Wizmann</dc:creator><pubDate>Sat, 21 Mar 2020 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2020-03-21:/hackerrank-digit-products-solution.html</guid><category>algorithm</category><category>hackerrank</category><category>solution</category></item><item><title>不好好学习，只能。。。 [Practise002]</title><link>/fail-to-study-practise002.html</link><description>&lt;h2&gt;题目列表&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;CodeForces 334A - Candy Bags&lt;/li&gt;
+&lt;li&gt;CodeForces 59A - Word&lt;/li&gt;
+&lt;li&gt;CodeForces 295A - Greg and Array&lt;/li&gt;
+&lt;li&gt;CodeForces 478C - Table Decorations&lt;/li&gt;
+&lt;li&gt;CodeForces 369C - Valera and Elections&lt;/li&gt;
+&lt;li&gt;CodeForces 372B - Counting Rectangles is Fun&lt;/li&gt;
+&lt;li&gt;CodeForces 463C - Gargari and Bishops&lt;/li&gt;
+&lt;li&gt;CodeForces 546D - Soldier and Number Game&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;VJudge比赛：https://vjudge.net/contest/331975&lt;/p&gt;
+&lt;p&gt;平均难度：Codeforces Div2 中档题&lt;/p&gt;
+&lt;h2&gt;背景 …&lt;/h2&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Wizmann</dc:creator><pubDate>Sun, 06 Oct 2019 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2019-10-06:/fail-to-study-practise002.html</guid><category>题解</category><category>水题</category></item><item><title>[kuangbin带你飞]专题二十一 概率&amp;期望【上】</title><link>/kuangbin-21-probability-and-expectation-1.html</link><description>&lt;h2&gt;A - LightOJ 1027 [A Dangerous Maze]&lt;/h2&gt;
+&lt;h3&gt;Description&lt;/h3&gt;
+&lt;p&gt;题目：&lt;a href="https://vjudge.net/problem/LightOJ-1027"&gt;A Dangerous Maze&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;现在你身处一个迷宫，你的面前有n个门&lt;code&gt;d[0...n]&lt;/code&gt;，你会等概率的随机打开一个门&lt;code&gt;i&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;如果&lt;code&gt;d[i] &amp;gt; 0&lt;/code&gt;，你会花&lt;code&gt;d[i]&lt;/code&gt;时间走出迷宫。如果&lt;code&gt;d[i] &amp;lt; 0&lt;/code&gt;，你会花&lt;code&gt;abs(d[i])&lt;/code&gt;的时间回到原处。&lt;/p&gt;
+&lt;p&gt;问你走出迷宫的数学期望是多少？&lt;/p&gt;
+&lt;h3&gt;Solution&lt;/h3&gt;
+&lt;p&gt;设最终走出迷宫的数学期望为&lt;code&gt;E&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;正数门的个数为&lt;code&gt;N0&lt;/code&gt;，选中标号为正数的门的概率为&lt;code&gt;P0&lt;/code&gt;，正数门的标号之和为&lt;code&gt;Sum0&lt;/code&gt;，平均值为&lt;code&gt;Ave0&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;与此对应的负数门的个数为&lt;code&gt;N0&lt;/code&gt;，选中概率 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Wizmann</dc:creator><pubDate>Sun, 02 Jun 2019 17:24:00 +0800</pubDate><guid isPermaLink="false">tag:None,2019-06-02:/kuangbin-21-probability-and-expectation-1.html</guid><category>题解</category><category>概率</category><category>期望</category></item><item><title>2019 BUPT Winter Training #5 div2 题解</title><link>/BUPT-Winter-Training-5-div2.html</link><description>&lt;p&gt;&lt;a href="https://vjudge.net/contest/283313#overview"&gt;比赛链接&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;A - Friends (HDU 5305)&lt;/h2&gt;
+&lt;h3&gt;题意&lt;/h3&gt;
+&lt;p&gt;给一张图有n个点，m条无向边。让你给每条边染成红色或黑色。使得每一个点相连的所有边中，红色边和黑色边的条数相等。&lt;/p&gt;
+&lt;p&gt;问有多少种染色方式。&lt;/p&gt;
+&lt;h3&gt;解法&lt;/h3&gt;
+&lt;p&gt;因为最多只有8个点，28条边。直接暴力搜索即可。只要代码别写（的像我一样）挫就行。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;cstdio&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;cstring&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;algorithm&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;vector&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+
+&lt;span class="k"&gt;using&lt;/span&gt; &lt;span class="k"&gt;namespace&lt;/span&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="cp"&gt;#define print(x) cout &amp;lt;&amp;lt; x &amp;lt;&amp;lt; endl&lt;/span&gt;
+&lt;span class="cp"&gt;#define input(x) cin &amp;gt;&amp;gt; x&lt;/span&gt;
+
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Solution&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="k"&gt;public&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;Solution&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;n_&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;int …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Wizmann</dc:creator><pubDate>Tue, 19 Feb 2019 23:28:00 +0800</pubDate><guid isPermaLink="false">tag:None,2019-02-19:/BUPT-Winter-Training-5-div2.html</guid><category>题解</category><category>水题</category></item><item><title>2019 BUPT Winter Training #3 div2 题解</title><link>/BUPT-Winter-Training-3-div2.html</link><description>&lt;h2&gt;写在前面&lt;/h2&gt;
+&lt;p&gt;做为一个年近半百的中年人，还能厚着脸皮蹭学弟学妹们的训练赛。真是开心啊。&lt;/p&gt;
+&lt;h2&gt;A - Constellation （CF 618C）&lt;/h2&gt;
+&lt;h3&gt;题意&lt;/h3&gt;
+&lt;p&gt;在二维平面上给定一堆整数点，求任意一个三角形，使得三角形内以及其边上，不包含其它的点。&lt;/p&gt;
+&lt;h3&gt;解法&lt;/h3&gt;
+&lt;p&gt;我们先从一条边想起。选定任意一个点，从这个点引出的&lt;strong&gt;最短边&lt;/strong&gt;上，一定不包含其它的点。（非常直观）&lt;/p&gt;
+&lt;p&gt;与这个思路类似，选定这条边之后，从这个边引出的面积最小的三角形，一定也不包含除三角形三点以外的其它点。&lt;/p&gt;
+&lt;p&gt;求三角形面积可以使用向量的叉积。&lt;/p&gt;
+&lt;h3&gt;代码&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;cstdio&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;cstdlib&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;cstring&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;algorithm&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;map&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;vector&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+
+&lt;span class="k"&gt;using&lt;/span&gt; &lt;span class="k"&gt;namespace&lt;/span&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="cp"&gt;#define print(x) cout &amp;lt;&amp;lt; x &amp;lt;&amp;lt; endl …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Wizmann</dc:creator><pubDate>Mon, 04 Feb 2019 18:27:00 +0800</pubDate><guid isPermaLink="false">tag:None,2019-02-04:/BUPT-Winter-Training-3-div2.html</guid><category>题解</category><category>水题</category></item><item><title>多线程编程初步</title><link>/multi-thread-programming-intro.html</link><description>&lt;h2&gt;前言&lt;/h2&gt;
+&lt;p&gt;非常不喜欢这种“X一峰”式的文章。但是为了伟大的教育事业，还是要写一点的。&lt;/p&gt;
+&lt;h2&gt;线程安全的定义&lt;/h2&gt;
+&lt;p&gt;无论操作系统如何调度线程，无论这些线程的执行顺序如何交织。一个函数（或类）在多个线程同时访问时能表现出正确的行为，而无需调用端代码进行额外的同步或协调操作。&lt;/p&gt;
+&lt;p&gt;划重点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;无论如何调度&lt;/li&gt;
+&lt;li&gt;无需额外的同步或协调操作&lt;/li&gt;
+&lt;li&gt;总能表现出正确的行为&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;竞态条件（race condition）&lt;/h2&gt;
+&lt;p&gt;竞态条件描述的是一个系统或者进程的输出依赖于不受控制的事件出现顺序或者出现时机。例如两个进程“同时读写”一块内存，其结果一定是不受控制的。&lt;/p&gt;
+&lt;p&gt;“同时读写”的定义包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一读一写&lt;/li&gt;
+&lt;li&gt;一写多读&lt;/li&gt;
+&lt;li&gt;多写一读&lt;/li&gt;
+&lt;li&gt;多写多读&lt;/li&gt;
+&lt;li&gt;多写&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;也就是说，只要包含“并发”和“写操作”两个特性，就会出现竞态条件。而“多读”一般来说是安全的。&lt;/p&gt;
+&lt;p&gt;同时也要注意，这里的读与写是物理意义上的读写，而不是逻辑意义上的。有一些函数看起来只有读操作，但其内部仍然包括了对数据的修改，这里需要注意甄别。&lt;/p&gt;
+&lt;h2&gt;Mutex - 互斥锁 …&lt;/h2&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Wizmann</dc:creator><pubDate>Tue, 16 Oct 2018 08:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2018-10-16:/multi-thread-programming-intro.html</guid><category>多线程</category><category>multi-thread</category><category>mutex</category><category>conditional-variable</category></item><item><title>开通了一个新栏目</title><link>/hello-world-for-beginners.html</link><description>&lt;p&gt;博客开通了一个新栏目“For Beginners"，想把之前写的一些比较适合于初学者的文章发到这里来。&lt;/p&gt;
+&lt;p&gt;实在是不喜欢博客里都是“XXX入门”、“XXX介绍”这类东西（我并没有针对谁），但是也不想白瞎我在教育事业上付出的心血。&lt;/p&gt;
+&lt;p&gt;大家勉为其难的看一下，有问题辛苦多做自我批评。&lt;/p&gt;
+&lt;p&gt;谢谢大家。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Wizmann</dc:creator><pubDate>Tue, 16 Oct 2018 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2018-10-16:/hello-world-for-beginners.html</guid><category>闲聊</category></item></channel></rss>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zhs" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>[kuangbin带你飞]专题二十一 概率&期望【上】 - Maerlyn's Rainbow - For Beginners</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/kuangbin-21-probability-and-expectation-1.html">
+
+        <meta name="author" content="Wizmann" />
+        <meta name="keywords" content="题解,概率,期望" />
+        <meta name="description" content="A - LightOJ 1027 [A Dangerous Maze] Description 题目：A Dangerous Maze 现在你身处一个迷宫，你的面前有n个门d[0...n]，你会等概率的随机打开一个门i。 如果d[i] &gt; 0，你会花d[i]时间走出迷宫。如果d[i] &lt; 0，你会花abs(d[i])的时间回到原处。 问你走出迷宫的数学期望是多少？ Solution 设最终走出迷宫的数学期望为E。 正数门的个数为N0，选中标号为正数的门的概率为P0，正数门的标号之和为Sum0，平均值为Ave0。 与此对应的负数门的个数为N0，选中概率 …" />
+
+        <meta property="og:site_name" content="Maerlyn's Rainbow - For Beginners" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="[kuangbin带你飞]专题二十一 概率&amp;期望【上】"/>
+        <meta property="og:url" content="/kuangbin-21-probability-and-expectation-1.html"/>
+        <meta property="og:description" content="A - LightOJ 1027 [A Dangerous Maze] Description 题目：A Dangerous Maze 现在你身处一个迷宫，你的面前有n个门d[0...n]，你会等概率的随机打开一个门i。 如果d[i] &gt; 0，你会花d[i]时间走出迷宫。如果d[i] &lt; 0，你会花abs(d[i])的时间回到原处。 问你走出迷宫的数学期望是多少？ Solution 设最终走出迷宫的数学期望为E。 正数门的个数为N0，选中标号为正数的门的概率为P0，正数门的标号之和为Sum0，平均值为Ave0。 与此对应的负数门的个数为N0，选中概率 …"/>
+        <meta property="article:published_time" content="2019-06-02" />
+            <meta property="article:section" content="ForBeginners" />
+            <meta property="article:tag" content="题解" />
+            <meta property="article:tag" content="概率" />
+            <meta property="article:tag" content="期望" />
+            <meta property="article:author" content="Wizmann" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.spacelab.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/solarizedlight.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Maerlyn's Rainbow - For Beginners ATOM Feed"/>
+
+
+
+        <link href="/feeds/forbeginners.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Maerlyn's Rainbow - For Beginners ForBeginners ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+Maerlyn's Rainbow - For Beginners            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                    <li><a href="https://wizmann.tk/">Blog</a></li>
+                    <li><a href="/category/forbeginners.html">ForBeginners</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/kuangbin-21-probability-and-expectation-1.html"
+                       rel="bookmark"
+                       title="Permalink to [kuangbin带你飞]专题二十一 概率&期望【上】">
+                        [kuangbin带你飞]专题二十一 概率&期望【上】
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2019-06-02T17:24:00+08:00"> 2019-06-02</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="/tag/ti-jie.html">题解</a>
+        /
+	<a href="/tag/gai-lu.html">概率</a>
+        /
+	<a href="/tag/qi-wang.html">期望</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <h2>A - LightOJ 1027 [A Dangerous Maze]</h2>
+<h3>Description</h3>
+<p>题目：<a href="https://vjudge.net/problem/LightOJ-1027">A Dangerous Maze</a></p>
+<p>现在你身处一个迷宫，你的面前有n个门<code>d[0...n]</code>，你会等概率的随机打开一个门<code>i</code>。</p>
+<p>如果<code>d[i] &gt; 0</code>，你会花<code>d[i]</code>时间走出迷宫。如果<code>d[i] &lt; 0</code>，你会花<code>abs(d[i])</code>的时间回到原处。</p>
+<p>问你走出迷宫的数学期望是多少？</p>
+<h3>Solution</h3>
+<p>设最终走出迷宫的数学期望为<code>E</code>。</p>
+<p>正数门的个数为<code>N0</code>，选中标号为正数的门的概率为<code>P0</code>，正数门的标号之和为<code>Sum0</code>，平均值为<code>Ave0</code>。</p>
+<p>与此对应的负数门的个数为<code>N0</code>，选中概率<code>P1</code>，标号之和<code>Sum1</code>，平均值<code>Ave1</code>。</p>
+<p>我们可以列出等式：</p>
+<div class="math">$$
+ E = P_{0} Ave_{0} + P_{1} (Ave_{1} + E)
+$$</div>
+<ul>
+<li>如果我们选中了正数门，那么会消耗<code>Ave0</code>的时间，并且走出迷宫。</li>
+<li>如果我们选中的负数门，那么会消耗<code>Ave1</code>的时间，回到原地，需要期望为<code>E</code>时间才能走出迷宫。</li>
+</ul>
+<p>接下来我们进行等式的进行一步推导，得到：</p>
+<div class="math">$$
+E = \frac{Sum_{0} + Sum_{1}}{N_{0}}
+$$</div>
+<p>最后使用分数化简就可以得到最终答案。</p>
+<p>代码： <a href="https://github.com/Wizmann/ACM-ICPC/blob/master/LightOJ/1027.cc">LightOJ/1027.cc</a></p>
+<h2>B - LightOJ 1030 [Discovering Gold]</h2>
+<h3>Description</h3>
+<p>题目：<a href="https://vjudge.net/problem/LightOJ-1030">Discovering Gold</a></p>
+<p>给定一个长为N的数组，每个格子里面都有一定数量的金子。</p>
+<p>现在你从位置1开始，每轮投骰子向前随机走1~6步，直到走到N点为止。如果你的随机数让你走出了数组，则你需要重新扔骰子。你可以获得每轮起始点和终点的金子。</p>
+<p>问你获得金子数量的期望。</p>
+<h3>Solution</h3>
+<p>本题可以用DP来做，但是一定注意DP的顺序。由于到达数组每一个点的概率不同，所以我们不能由<code>dp[i - k]</code>等概率的推出<code>dp[i]</code>。我们选择从<code>dp[i + k]</code>推出<code>dp[i]</code>。</p>
+<p>设<code>dp[i]</code>为从点i到点n所需要步数的期望。<code>P</code>代表从<code>i</code>到<code>i+k</code>的概率。</p>
+<div class="math">$$
+dp[i] = \sum{dp[i + k] * P}
+$$</div>
+<p>代码：<a href="https://github.com/Wizmann/ACM-ICPC/blob/master/LightOJ/1030.cc">LightOJ/1030.cc</a></p>
+<h2>C - LightOJ 1038 Race to 1 Again</h2>
+<p>题目：<a href="https://vjudge.net/problem/LightOJ-1038">Race to 1 Again</a></p>
+<h3>Description</h3>
+<p>给一个数N，每一步都可以将N整除，直到除到1为止。</p>
+<p>问步数的期望。</p>
+<h3>Solution</h3>
+<p>非常简单的DP，由于数据规模不大，可以直接在DFS的过程中求约数。</p>
+<p><code>P</code>代表数字<code>i</code>约数个数的倒数。</p>
+<div class="math">$$
+dp[i] = \sum{dp[i / k] * P} \quad \mid \quad  i \bmod k == 0
+$$</div>
+<p>代码：<a href="https://github.com/Wizmann/ACM-ICPC/blob/master/LightOJ/1038.cc">LightOJ/1038.cc</a></p>
+<h2>D - LightOJ 1079 Just another Robbery</h2>
+<p>题目：<a href="https://vjudge.net/problem/LightOJ-1079">Just another Robbery</a></p>
+<h3>Description</h3>
+<p>劫匪想打劫银行，但是希望被抓的概率不大于p。</p>
+<p>有n个银行，给定打劫银行<code>i</code>的收益<code>m[i]</code>和被抓的概率<code>q[i]</code>。</p>
+<p>问最多能打劫几个银行，使得收益最大。</p>
+<h3>Solution</h3>
+<p>由于银行的个数<code>n</code>和抢银行的收益<code>m[i]</code>的乘积最大才10000。所以可以用<code>dp[k]</code>表示抢银行的总收益为<code>k</code>时被抓的概率。</p>
+<div class="math">$$
+dp[k + m_{i}] = \min(dp[k + m_{i}], 1 - (1 - dp[k])(1 - q_{i}))
+$$</div>
+<p>代码：<a href="https://github.com/Wizmann/ACM-ICPC/blob/master/LightOJ/1079.cc">LightOJ/1079.cc</a></p>
+<h2>E - LightOJ 1104 Birthday Paradox</h2>
+<p>题目：<a href="https://vjudge.net/problem/LightOJ-1104">Birthday Paradox</a></p>
+<h3>Description</h3>
+<p>给定一年有n天，求最小的m，使m个人当中有两个人的生日相同的概率超过0.5。</p>
+<h3>Solution</h3>
+<p>生日悖论问题。</p>
+<div class="math">$$
+P = 1 \times \frac{n - 1}{n} \times \frac{n - 2}{n} \dotsb \frac{n - m + 1}{n}
+$$</div>
+<p>因为n比较大以及数据组数比较多，所以我们可以预处理出所有的结果。</p>
+<p>不过直接算也能过。</p>
+<p>代码：<a href="https://github.com/Wizmann/ACM-ICPC/blob/master/LightOJ/1104.cc">LightOJ/1104.cc</a></p>
+<h2>F- LightOJ 1151 Snakes and Ladders</h2>
+<p>题目：<a href="https://vjudge.net/problem/LightOJ-1151">Snakes and Ladders</a></p>
+<h3>Description</h3>
+<p>10x10的棋盘上，顺序标号1\~100。从点1开始，随机扔骰子前进1\~6步。走到点100时（包括走出点100），游戏结束。</p>
+<p>棋盘上有梯子和蛇，踩到梯子会向前传送，踩到蛇会向后传送。</p>
+<p>问给定棋盘，从1走到100所需要步数的期望。</p>
+<h3>Solution</h3>
+<p>高斯消元模板题。</p>
+<p>对于没有梯子或蛇的格子<code>i</code>，有：</p>
+<div class="math">$$
+E_{i} = \frac{E_{i + 1} + E_{i + 2} + \dotsb + E_{i + 6}}{6} + 1 
+$$</div>
+<p>对于有梯子或蛇的格子<code>i</code>，如果其终点为格子<code>j</code>，有：</p>
+<div class="math">$$
+E_{i} = E_{j}
+$$</div>
+<p>我们联立方程组，然后使用高斯消元即可求解。</p>
+<p>代码：<a href="https://github.com/Wizmann/ACM-ICPC/blob/master/LightOJ/1151.cc">LightOJ/1151.cc</a></p>
+<h2>G - LightOJ 1248 Dice (III)</h2>
+<p>题目：<a href="https://vjudge.net/problem/LightOJ-1248">Dice (III)</a></p>
+<h3>Description</h3>
+<p>给定一个N面的骰子，问N面至少都能投出一次的数学期望。</p>
+<h3>Solution</h3>
+<p>我们可以列出期望的方程，设我们已经投出了<code>i</code>面，还有<code>n - i</code>面没有投出，<code>dp[i]</code>代表还需要投的次数的期望。此时有：</p>
+<div class="math">$$
+dp[i] = \frac{i}{n} \times dp[i] + \frac{n - i}{n} \times dp[i + 1] + 1\\
+\Downarrow\\
+dp[i] = dp[i + 1] + \frac{n}{n - i}
+$$</div>
+<p>代码：<a href="https://github.com/Wizmann/ACM-ICPC/blob/master/LightOJ/1248.cc">LightOJ/1248.cc</a></p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "left",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'wizmann'; // required: replace example with your forum shortname
+
+            var disqus_config = function () {
+                this.language = "zhs";
+
+                        this.page.identifier = '2019-06-02-kuangbin-21-probability-and-expectation-1';
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://github.com/wizmann"><i class="fa fa-github-square fa-lg"></i> github</a></li>
+    <li class="list-group-item"><a href="http://wizmann.tk/feeds/all.atom.xml"><i class="fa fa-rss-square fa-lg"></i> rss</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group " id="tags">
+    <li class="list-group-item tag-1">
+      <a href="/tag/shui-ti.html">水题</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="/tag/ti-jie.html">题解</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="/tag/solution.html">solution</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="/tag/mutex.html">mutex</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="/tag/duo-xian-cheng.html">多线程</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="/tag/xian-liao.html">闲聊</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="/tag/hackerrank.html">hackerrank</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="/tag/qi-wang.html">期望</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="/tag/algorithm.html">algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="/tag/gai-lu.html">概率</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="/tag/multi-thread.html">multi-thread</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="/tag/conditional-variable.html">conditional-variable</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="http://getpelican.com/" target="_blank">Pelican</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2020 Wizmann
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'wizmann'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+
+</body>
+</html>
